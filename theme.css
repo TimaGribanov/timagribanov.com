@@ -1,0 +1,45 @@
+@font-face {
+    font-family: BloggerSans;
+    src: url('Blogger_Sans.otf');
+}
+
+body {
+    width: 1000px;
+    margin: auto;
+    font-family: BloggerSans;
+}
+
+#header {
+    margin: 20px 0px 0px 0px;
+}
+
+#main-link {
+    display: inline-block;
+    font-size: 30pt;
+}
+
+.topmenu {
+    display: inline-block;
+    float: right;
+    vertical-align: top;
+}
+
+#social-block {
+    display: inline-block;
+    float: right;
+}
+
+.submenu {
+    -webkit-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+        transform: scaleY(0);
+    -webkit-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        transform-origin: 0 0;
+}
+
+.topmenu:hover .submenu {
+    -webkit-transform: scaleY(1);
+        -ms-transform: scaleY(1);
+        transform: scaleY(1);
+}
