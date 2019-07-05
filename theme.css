@@ -2,11 +2,17 @@
     font-family: BloggerSans;
     src: url('Blogger_Sans.otf');
 }
+ 
+@font-face {
+    font-family: BloggerSansBold;
+    src: url('Blogger_Sans-Bold.otf');
+}
 
 body {
     width: 1000px;
     margin: auto;
     font-family: BloggerSans;
+    text-decoration-color: black;
 }
 
 #header {
@@ -14,22 +20,61 @@ body {
 }
 
 #main-link {
+    font-family: BloggerSansBold;
     display: inline-block;
-    font-size: 30pt;
+    font-size: 50pt;
 }
 
-.topmenu {
+#main-link:link {
+    text-decoration-line: none;
+    color: black;
+}
+
+#main-link:visited {
+    text-decoration-line: none;
+    color: black;
+}
+
+#right_side {
     display: inline-block;
     float: right;
-    vertical-align: top;
+    height: 73px;
+	margin-top: 20px;
 }
 
 #social-block {
     display: inline-block;
     float: right;
+	height: 30px;
+	margin-top: 11.5px;
+}
+
+.topmenu {
+    list-style-type: none;
+    font-size: 15pt;
+    display: inline-block;
+    margin-top: 11.5px;
+}
+
+.topmenu a:link {
+    text-decoration-line: none;
+    color: black;
+}
+
+.topmenu a:visited {
+    text-decoration-line: none;
+    color: black;
+}
+
+.topmenu .arrow {
+	vertical-align: middle;
 }
 
 .submenu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 0px;
     -webkit-transform: scaleY(0);
         -ms-transform: scaleY(0);
         transform: scaleY(0);
@@ -38,8 +83,67 @@ body {
         transform-origin: 0 0;
 }
 
+.submenu a {
+    margin-left: 0px;
+}
+
 .topmenu:hover .submenu {
     -webkit-transform: scaleY(1);
         -ms-transform: scaleY(1);
         transform: scaleY(1);
+}
+
+#main {
+	display: inline-block;
+	margin-top: 10px;
+}
+
+#menu {
+	display: inline-block;
+    width: 290px;
+	margin-right: 10px;
+    font-family: BloggerSansBold;
+    font-size: 15pt;
+}
+
+#menu a:link {
+    text-decoration-line: none;
+    color: black;
+}
+
+#menu a:visited {
+    text-decoration-line: none;
+    color: black;
+}
+
+#menu p {
+	margin: 0px;
+	margin-bottom: 7px;
+}
+
+#main-block {
+	display: inline-block;
+	float: right;
+	width: 690px;
+	margin-left: 10px;
+}
+
+#main-block a:link {
+	text-decoration-line: underline;
+    color: black;
+}
+
+#main-block a:visited {
+	text-decoration-line: underline;
+    color: black;
+}
+
+#footer {
+	font-size: 12px;
+	text-align: center;
+	margin-top: 20px;
+}
+
+#footer p {
+	margin: 0px;
 }
