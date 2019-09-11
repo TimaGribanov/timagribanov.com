@@ -1,11 +1,27 @@
 <!DOCTYPE html> 
-<html>
+<html lang="ru">
 	<head>
 		<title>Выберите язык</title>
-		<meta charset="utf-8">
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="theme.css"/>
+
+		<script type="text/javascript">
+			function changeText() {
+				var text = document.getElementById("text_index").innerHTML;
+				if (text === "выберите язык") {
+					document.getElementById("text_index").innerHTML = "choose language";
+				}
+				if (text === "choose language") {
+					document.getElementById("text_index").innerHTML = "выберите язык";
+				}
+			}
+		</script>
 	</head>
 	<body>
-		<a href="ru/index.html">Русский</a>
-		<a href="en/index.html">English</a>
+	<div id="text_index" onClick="changeText()">выберите язык</div>
+	<div id="lang_index">
+		<a href="ru/index.html">русский</a><br/>
+		<a href="en/index.html">english</a>
+	</div>
 	</body>
 </html>
