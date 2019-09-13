@@ -1,0 +1,17 @@
+Hometown
+==========
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Содержание:
+   
+   Hometown/Clock_Work.rst
+   Hometown/Hometown.rst
+   Hometown/Rainbow_Flag.rst
+   Hometown/Circus.rst
+   Hometown/Kouya_wo_Aruke.rst
+   Hometown/UCLA.rst
+   Hometown/Motor_Pool.rst
+   Hometown/Dancing_Girl.rst
+   Hometown/Sayounara_Soldier.rst
+   Hometown/Boys_Girls.rst

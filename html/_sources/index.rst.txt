@@ -1,0 +1,33 @@
+.. Asian Kung-Fu Generation Lyrics documentation master file, created by
+   sphinx-quickstart on Mon Jul  8 12:31:43 2019.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Привет! Здесь я выкладываю свои переводы песен Asian Kung-Fu Generation на русский язык!
+========================================================================================
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Содержание:
+   
+   Houkai_Amplifier.rst
+   Kimi_Tsunagi_Five_M.rst
+   Sol_Fa.rst
+   Fanclub.rst
+   World_World_World.rst
+   Mada_Minu_Ashita_Ni.rst
+   Surf_Bungaku_Kamakura.rst
+   Magic_Disk.rst
+   Landmark.rst
+   Wonder_Future.rst
+   Hometown.rst
+   Cant_Sleep_EP.rst
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
