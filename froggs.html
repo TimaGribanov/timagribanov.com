@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>froggs</title>
+    <base href="http://localhost:63342/timagribanov.github.io/"/>
+    <!-- base href="https://timagribanov.github.io/"/ -->
+
+    <script>
+        function frogs() {
+            var pictures = [
+                'froggs/1.jpg',
+                'froggs/2.jpg',
+                'froggs/3.jpg',
+                'froggs/4.jpg',
+                'froggs/5.jpg',
+                'froggs/6.jpg',
+                'froggs/7.jpg',
+                'froggs/8.jpg',
+                'froggs/9.jpg',
+                'froggs/10.jpg',
+                'froggs/11.jpg',
+                'froggs/12.jpg',
+                'froggs/13.jpg',
+                'froggs/14.jpg',
+                'froggs/15.jpg',
+                'froggs/16.jpg',
+                'froggs/17.jpg',
+                'froggs/18.jpg',
+                'froggs/19.jpg',
+                'froggs/20.jpg',
+                'froggs/21.jpg',
+                'froggs/22.jpg',
+                'froggs/23.jpg',
+                'froggs/24.jpg',
+                'froggs/25.jpg',
+                'froggs/26.jpg',
+                'froggs/27.jpg',
+                'froggs/28.jpg',
+                'froggs/29.jpg',
+                'froggs/30.jpg',
+                'froggs/31.jpg',
+                'froggs/32.jpg',
+                'froggs/33.jpg',
+                'froggs/34.jpg',
+                'froggs/35.jpg',
+                'froggs/36.jpg',
+                'froggs/37.jpg',
+                'froggs/38.jpg',
+                'froggs/39.jpg',
+                'froggs/40.jpg',
+                'froggs/41.jpg',
+                'froggs/42.jpg',
+                'froggs/43.jpg',
+                'froggs/44.jpg',
+                'froggs/45.jpg',
+                'froggs/46.jpg',
+                'froggs/47.jpg',
+                'froggs/48.jpg',
+                'froggs/49.jpg',
+                'froggs/50.jpg',
+                'froggs/51.jpg',
+                'froggs/52.jpg',
+                'froggs/53.jpg',
+                'froggs/54.jpg',
+                'froggs/55.jpg',
+                'froggs/56.jpg',
+                'froggs/57.jpg',
+                'froggs/58.jpg',
+            ];
+            var frog = document.getElementById("pic");
+            frog.src = pictures[Math.floor(Math.random() * pictures.length)];
+        }
+    </script>
+</head>
+<body onload="frogs()">
+    <div style="text-align: center;">
+        <button onclick="frogs()">Смени жабу</button><br/>
+        <img id="pic" src=''/>
+    </div>
+</body>
+</body>
+</html>
