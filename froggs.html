@@ -100,10 +100,17 @@
             frog.src = pictures[Math.floor(Math.random() * pictures.length)];
         }
     </script>
+
+    <style>
+        #button {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 </head>
 <body onload="frogs()">
     <div style="text-align: center;">
-        <img src="froggs/frogg_attention.jpg" onclick="frogs()" alt="Смени жабу"/>
+        <img id="button" src="froggs/frogg_attention.jpg" onclick="frogs()" alt="Смени жабу"/>
         <!-- <button onclick="frogs()">Смени жабу</button><br/> -->
         <img id="pic" src='' alt="Тут жаба"/>
     </div>
