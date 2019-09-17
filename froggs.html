@@ -12,7 +12,7 @@
 
             modal.style.display = "block";
 
-            var close = document.getElementById("close");
+            var close = document.getElementById("attentionImg");
             close.onclick = function() {
                 modal.style.display = "none";
                 frogs();
@@ -148,7 +148,7 @@
             height: 832px;
         }
 
-        #attentionImg, #close {
+        #attentionImg {
             animation-name: zoom;
             animation-duration: 0.6s;
         }
@@ -162,7 +162,6 @@
 <body onload="start()">
     <div id="attention">
         <img id="attentionImg" src="froggs/frogg_attention.jpg" alt="Знай, всяк сюда входящий, что далее идут жабы"/><br/>
-        <button id="close">Открыть жаб</button>
     </div>
 
     <div id="mainFrogg">
