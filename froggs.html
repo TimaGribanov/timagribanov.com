@@ -7,6 +7,18 @@
     <base href="https://timagribanov.github.io/"/>
 
     <script>
+        function start() {
+            var modal = document.getElementById("attention");
+
+            modal.style.display = "block";
+
+            var close = document.getElementById("close");
+            close.onclick = function() {
+                modal.style.display = "none";
+                frogs();
+            };
+        }
+
         function frogs() {
             var pictures = [
                 'froggs/1.jpg',
@@ -106,11 +118,38 @@
             width: 100px;
             height: 100px;
         }
+
+        #mainFrogg {
+            text-align: center;
+        }
+
+        #attention {
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            text-align: center;
+            padding-top: 50px;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        #attentionImg {
+            width: 625px;
+            height: 832px;
+        }
     </style>
 </head>
-<body onload="frogs()">
-    <div style="text-align: center;">
-        <img id="button" src="froggs/frogg_button.png" onclick="frogs()" alt="Смени жабу"/>
+<body onload="start()">
+    <div id="attention">
+        <img id="attentionImg" src="froggs/frogg_attention.jpg" alt="Знай, всяк сюда входящий, что далее идут жабы"/><br/>
+        <button id="close">Открыть жаб</button>
+    </div>
+
+    <div id="mainFrogg">
+        <img id="button" src="froggs/frogg_button.png" onclick="frogs()" alt="Смени жабу"/><br/>
         <!-- <button onclick="frogs()">Смени жабу</button><br/> -->
         <img id="pic" src='' alt="Тут жаба"/>
     </div>
