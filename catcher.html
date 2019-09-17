@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Поймай жабу</title>
+
+    <style>
+        #container {
+            width: 900px;
+            height: 900px;
+            border: black 2px solid;
+            margin: auto;
+        }
+
+        #pic {
+            position: relative;
+            width: 100px;
+            height: 76px;
+        }
+
+        footer {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function catcher() {
+            var position = document.getElementById("pic");
+
+            position.style.top = (Math.floor(Math.random() * 824) +1) +"px";
+            position.style.left = (Math.floor(Math.random() * 800) +1) +"px";
+        }
+    </script>
+</head>
+<body onload="catcher()">
+    <div id="container">
+        <img id="pic" src="froggs/55.jpg" alt="Жаба скачет" onclick="catcher()">
+    </div>
+
+    <footer>
+        <a href="froggs.html">Обрытно к случайным жабам</a>
+    </footer>
+</body>
+</html>
