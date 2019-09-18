@@ -20,6 +20,42 @@
             height: 76px;
         }
 
+        #winSplash {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            text-align: center;
+            overflow: auto;
+            padding-top: 50px;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            background-color: rgba(0,0,0,0.6);
+            animation-name: zoom;
+            animation-duration: 0.4s;
+        }
+
+        #winSplash p {
+            font-size: 30pt;
+            color: white;
+        }
+
+        #winSplash img {
+            max-width: 500px;
+        }
+
+        #winSplash a {
+            color: white;
+            text-decoration-line: none;
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)}
+            to {transform:scale(1)}
+        }
+
         footer {
             text-align: center;
         }
@@ -30,37 +66,25 @@
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
-        const i = randomInteger(5, 15);
-
-        let coeff;
-
-        if (i === 5) {coeff = 2}
-        else if (i === 6) {coeff = 2.5}
-        else if (i === 7) {coeff = 3}
-        else if (i === 8) {coeff = 3.5}
-        else if (i === 9) {coeff = 4}
-        else if (i === 10) {coeff = 4.5}
-        else if (i === 11) {coeff = 5}
-        else if (i === 12) {coeff = 5.5}
-        else if (i === 13) {coeff = 6}
-        else if (i === 14) {coeff = 6.5}
-        else if (i === 15) {coeff = 7}
+        const i = randomInteger(5, 15); //number of needed clicks to catch a frog
 
         let width = 100;
         let height = 76;
-        let ymax;
+        let ymax; //coefficients to move the resized the frog
         let xmax;
-        let j = -1;
-        const frog = document.getElementById("pic");
+        let j = 0; //counter of done clicks
+        let coeff = 600 / i; //coefficient to resize the frog
+
 
         function catcher() {
+            const frog = document.getElementById("pic");
             j++;
             if (j === i) {
                 youWon();
             }
             else {
-                width = width * coeff; //здесь не та схема умножения
-                height = width * coeff;
+                width = width + coeff;
+                height = width + coeff;
                 ymax = 900 - height;
                 xmax = 900 - width;
                 frog.style.top = (Math.floor(Math.random() * ymax) + 1) + "px";
@@ -71,11 +95,81 @@
         }
 
         function youWon() {
+            var pictures = [
+                'froggs/1.jpg',
+                'froggs/3.jpg',
+                'froggs/4.jpg',
+                'froggs/6.jpg',
+                'froggs/8.jpg',
+                'froggs/10.jpg',
+                'froggs/11.jpg',
+                'froggs/12.jpg',
+                'froggs/13.jpg',
+                'froggs/15.jpg',
+                'froggs/16.jpg',
+                'froggs/17.jpg',
+                'froggs/18.jpg',
+                'froggs/19.jpg',
+                'froggs/20.jpg',
+                'froggs/21.jpg',
+                'froggs/27.jpg',
+                'froggs/30.jpg',
+                'froggs/31.jpg',
+                'froggs/32.jpg',
+                'froggs/33.jpg',
+                'froggs/34.jpg',
+                'froggs/35.jpg',
+                'froggs/36.jpg',
+                'froggs/37.jpg',
+                'froggs/38.jpg',
+                'froggs/39.jpg',
+                'froggs/40.jpg',
+                'froggs/41.jpg',
+                'froggs/42.jpg',
+                'froggs/43.jpg',
+                'froggs/44.jpg',
+                'froggs/50.jpg',
+                'froggs/51.jpg',
+                'froggs/53.jpg',
+                'froggs/54.jpg',
+                'froggs/58.jpg',
+                'froggs/59.jpg',
+                'froggs/60.jpg',
+                'froggs/61.jpg',
+                'froggs/65.jpg',
+                'froggs/66.jpg',
+                'froggs/67.jpg',
+                'froggs/68.jpg',
+                'froggs/69.jpg',
+                'froggs/70.jpg',
+                'froggs/71.jpg',
+                'froggs/72.jpg',
+                'froggs/76.jpg',
+                'froggs/77.jpg',
+                'froggs/78.jpg',
+                'froggs/88.jpg',
+                'froggs/94.jpg',
+                'froggs/95.jpg',
+                'froggs/99.jpg',
+                'froggs/100.jpg'
+            ];
 
+            var winFrog = document.getElementById("winPic");
+            winFrog.src = pictures[Math.floor(Math.random() * pictures.length)];
+
+            var winner = document.getElementById("winSplash");
+
+            winner.style.display = "block";
         }
     </script>
 </head>
 <body onload="catcher()">
+    <div id="winSplash">
+        <p>Вы поймали офигенную жабу!</p>
+        <img id="winPic" src='' alt="Тут выигрышная жаба"/><br/>
+        <a href="catcher2.html">Сыграть заново</a>
+    </div>
+
     <div id="container">
         <img id="pic" src="froggs/55.jpg" alt="Жаба скачет" onclick="catcher()">
     </div>
