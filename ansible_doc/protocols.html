@@ -47,25 +47,30 @@
 <p class="topic-title first">Содержание</p>
 <ul class="simple">
 <li><a class="reference internal" href="#id1" id="id3">Протоколы</a><ul>
-<li><a class="reference internal" href="#x2-ap" id="id4">X2-AP</a></li>
-<li><a class="reference internal" href="#pdcp" id="id5">PDCP</a></li>
-<li><a class="reference internal" href="#nas" id="id6">NAS</a></li>
-<li><a class="reference internal" href="#s1-ap" id="id7">S1-AP</a></li>
-<li><a class="reference internal" href="#gtp" id="id8">GTP</a><ul>
-<li><a class="reference internal" href="#gtpv2-c" id="id9">GTPv2-C</a></li>
-<li><a class="reference internal" href="#gtpv1-u" id="id10">GTPv1-U</a></li>
+<li><a class="reference internal" href="#lte" id="id4">LTE</a><ul>
+<li><a class="reference internal" href="#x2-ap" id="id5">X2-AP</a></li>
+<li><a class="reference internal" href="#pdcp" id="id6">PDCP</a></li>
+<li><a class="reference internal" href="#nas" id="id7">NAS</a></li>
+<li><a class="reference internal" href="#m2-ap" id="id8">M2-AP</a></li>
+<li><a class="reference internal" href="#s1-ap" id="id9">S1-AP</a></li>
+<li><a class="reference internal" href="#gtpv2-c" id="id10">GTPv2-C</a></li>
+<li><a class="reference internal" href="#gtpv1-u" id="id11">GTPv1-U</a></li>
+<li><a class="reference internal" href="#diameter" id="id12">Diameter</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#diameter" id="id11">Diameter</a></li>
+<li><a class="reference internal" href="#ims" id="id13">IMS</a></li>
 </ul>
 </li>
 </ul>
 </div>
+<div class="section" id="lte">
+<h2><a class="toc-backref" href="#id4">LTE</a><a class="headerlink" href="#lte" title="Ссылка на этот заголовок">¶</a></h2>
 <p>В системе LTE от Amarisoft используются следующие протоколы:</p>
 <ul class="simple">
 <li>X2-AP;</li>
 <li>PDCP;</li>
 <li>NAS;</li>
+<li>M2-AP;</li>
 <li>S1-AP;</li>
 <li>GTPv2-C;</li>
 <li>GTPv1-U;</li>
@@ -73,28 +78,94 @@
 </ul>
 <p>Более подробно каждый из протоколов рассмотрен ниже.</p>
 <div class="section" id="x2-ap">
-<h2><a class="toc-backref" href="#id4">X2-AP</a><a class="headerlink" href="#x2-ap" title="Ссылка на этот заголовок">¶</a></h2>
+<h3><a class="toc-backref" href="#id5">X2-AP</a><a class="headerlink" href="#x2-ap" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Протокол X2-AP используется для управления мобильностью UE внутри E-UTRAN и для предоставления следующих функций:</p>
+<ul class="simple">
+<li>Управление мобильностью (Mobility Management);</li>
+<li>Управление загруженностью (Load Management);</li>
+<li>Сообщение об основных ошибках (Reporting of General Error Situations);</li>
+<li>Перенастройка X2 (Resetting the X2);</li>
+<li>Установление X2 (Setting the X2);</li>
+<li>Обновление конфигураций eNB (eNB Configuration Udate).</li>
+</ul>
+<p>Протокол определён спецификацией <a class="reference external" href="https://www.etsi.org/deliver/etsi_ts/136400_136499/136423/15.02.00_60/ts_136423v150200p.pdf">3GPP TS 36.423</a>.</p>
 </div>
 <div class="section" id="pdcp">
-<h2><a class="toc-backref" href="#id5">PDCP</a><a class="headerlink" href="#pdcp" title="Ссылка на этот заголовок">¶</a></h2>
+<h3><a class="toc-backref" href="#id6">PDCP</a><a class="headerlink" href="#pdcp" title="Ссылка на этот заголовок">¶</a></h3>
+<p>PDCP = Packet Data Convergence Protocol (Протокол конвергенции пакетных данных).</p>
+<p>Протокол PDCP — часть плоскостей управления и пользователя радиоинтерфейса LTE-Uu.</p>
+<p>Основные сервисы и функции проктола в плоскости управления:</p>
+<ul class="simple">
+<li>Шифрование и защита целостности;</li>
+<li>Передача данных панели управления.</li>
+</ul>
+<p>Основные сервисы и функции проктола в плоскости пользователя:</p>
+<ul class="simple">
+<li>Сжатие и декомпрессия заголовков (только для ROHC);</li>
+<li>Передача пользовательских данных;</li>
+<li>Поочерёдная доставка PDE верхнего уровняв процессе процедуры PDCP-восстановления для RLC AP;</li>
+<li>Передача PDCP SDU во время хэндовера для RLC AM;</li>
+<li>Шифрование и дешифрование;</li>
+<li>Отброс SDU по времени в канале вверх (uplink).</li>
+</ul>
+<p>Спецификация: <a class="reference external" href="https://www.etsi.org/deliver/etsi_ts/136300_136399/136323/15.04.00_60/ts_136323v150400p.pdf">3GPP TS 36.323</a> — Evolved Universal Terrestrial Radio Access (E-UTRA); Packet Data Convergence Protocol (PDCP) specification</p>
 </div>
 <div class="section" id="nas">
-<h2><a class="toc-backref" href="#id6">NAS</a><a class="headerlink" href="#nas" title="Ссылка на этот заголовок">¶</a></h2>
+<h3><a class="toc-backref" href="#id7">NAS</a><a class="headerlink" href="#nas" title="Ссылка на этот заголовок">¶</a></h3>
+<p>NAS = Non-access Stratum (Слой без доступа).</p>
+<p>NAS — верхний слой плоскости управления между UE и MME в радиоинтерфейсе. Главные функции протоколов, входящих в NAS, — поддержка мобильности UE и поддежка процедур управления сессиями для установления и поддержания IP-соединения между UE и P-GW.</p>
+<p>Протокол управления NAS выполняет следующие функции:</p>
+<ul class="simple">
+<li>Управление EPS носиетелем (EPS bearer);</li>
+<li>Аутентификация;</li>
+<li>Оперирование мобильностью ECM-IDLE;</li>
+<li>Создание запросов пейджинга в ECM-IDLE;</li>
+<li>Управление безопасностью.</li>
+</ul>
+<p>Спецификация: <a class="reference external" href="https://www.etsi.org/deliver/etsi_ts/124300_124399/124301/15.07.00_60/ts_124301v150700p.pdf">3GPP TS 24.301</a> — Non-Access-Stratum (NAS) protocol for Evolved Packet System (EPS); Stage 3.</p>
+</div>
+<div class="section" id="m2-ap">
+<h3><a class="toc-backref" href="#id8">M2-AP</a><a class="headerlink" href="#m2-ap" title="Ссылка на этот заголовок">¶</a></h3>
 </div>
 <div class="section" id="s1-ap">
-<h2><a class="toc-backref" href="#id7">S1-AP</a><a class="headerlink" href="#s1-ap" title="Ссылка на этот заголовок">¶</a></h2>
+<h3><a class="toc-backref" href="#id9">S1-AP</a><a class="headerlink" href="#s1-ap" title="Ссылка на этот заголовок">¶</a></h3>
+<p>S1-AP = S1-Application Part.</p>
+<p>S1-AP предоставляет сигнальные сервисы между E-UTRAN и EPC и обладает следующими функциями:</p>
+<ul class="simple">
+<li>Управление E-RAB;</li>
+<li>Передача первоначального контекста (Initial Context Transfer);</li>
+<li>Индикация возможностей UE (UE Capability Info Indication);</li>
+<li>Мобильность;</li>
+<li>Управление интерфейсом S1;</li>
+<li>Передача NAS-сигнализации;</li>
+<li>Освобождение S1 UE-контекста (S1 UE context Release);</li>
+<li>Модификаци UE-контекста (UE Context Modification);</li>
+<li>Передача состояния (Status Transfer);</li>
+<li>Отслеживание (Trace);</li>
+<li>Доклад о местоположении (Location Reporting);</li>
+<li>Туннелирование S1 CDMA2000;</li>
+<li>Передача предупреждающих сообщений;</li>
+<li>Управление информацией RAN;</li>
+<li>Передача настроек.</li>
+</ul>
+<p>Спецификация: <a class="reference external" href="https://www.etsi.org/deliver/etsi_ts/136400_136499/136413/15.06.00_60/ts_136413v150600p.pdf">3GPP TS 36.413</a> — Evolved Universal Terrestrial Radio Access Network (E-UTRAN); S1 Application Protocol (S1AP).</p>
 </div>
-<div class="section" id="gtp">
-<h2><a class="toc-backref" href="#id8">GTP</a><a class="headerlink" href="#gtp" title="Ссылка на этот заголовок">¶</a></h2>
 <div class="section" id="gtpv2-c">
-<h3><a class="toc-backref" href="#id9">GTPv2-C</a><a class="headerlink" href="#gtpv2-c" title="Ссылка на этот заголовок">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">GTPv2-C</a><a class="headerlink" href="#gtpv2-c" title="Ссылка на этот заголовок">¶</a></h3>
 </div>
 <div class="section" id="gtpv1-u">
-<h3><a class="toc-backref" href="#id10">GTPv1-U</a><a class="headerlink" href="#gtpv1-u" title="Ссылка на этот заголовок">¶</a></h3>
-</div>
+<h3><a class="toc-backref" href="#id11">GTPv1-U</a><a class="headerlink" href="#gtpv1-u" title="Ссылка на этот заголовок">¶</a></h3>
+<p>GTPv1-U = GPRS Tunnelling Protocol version 1 User Plane.</p>
+<p>GTP-U используется в интерфейсах S1-U, X2, S4, S5 И S8 EPS. GTP-U используется для переноса инкапсулированных T-PDU и сигнальных сообщений между заданными конечными точками GTP-U-туннеля. Идентификатор конечной точки туннеля (TEID, Tunnel Endpoint ID), содержащийся в заголовке GTP-пакета, сообщает, какому туннелю принадлежит T-PDU.</p>
+<p>Транспортный носитель (transport bearer) идентифицируется при помощи GTP-U TEID и IP-адреса (source TEID, destination TEID, source IP address, destination IP address).</p>
+<p>Спецификация: <a class="reference external" href="https://www.etsi.org/deliver/etsi_ts/129200_129299/129281/15.05.00_60/ts_129281v150500p.pdf">3GPP TS 29.281</a> - General Packet Radio System (GPRS) Tunnelling Protocol User Plane (GTPv1-U).</p>
 </div>
 <div class="section" id="diameter">
-<h2><a class="toc-backref" href="#id11">Diameter</a><a class="headerlink" href="#diameter" title="Ссылка на этот заголовок">¶</a></h2>
+<h3><a class="toc-backref" href="#id12">Diameter</a><a class="headerlink" href="#diameter" title="Ссылка на этот заголовок">¶</a></h3>
+</div>
+</div>
+<div class="section" id="ims">
+<h2><a class="toc-backref" href="#id13">IMS</a><a class="headerlink" href="#ims" title="Ссылка на этот заголовок">¶</a></h2>
 </div>
 </div>
 
@@ -122,22 +193,20 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script><h3>Навигация</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p class="caption"><span class="caption-text">Содержание:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="enb.html">enb.сfg</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mme.html">mme.cfg</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ims.html">ims.cfg</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mbmsgw.html">mbmsgw.cfg</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Протоколы</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#x2-ap">X2-AP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pdcp">PDCP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#nas">NAS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#s1-ap">S1-AP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#gtp">GTP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#diameter">Diameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lte">LTE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ims">IMS</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="timers.html">Таймеры 3GPP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emm_causes.html">Причины ошибок EMM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="esm_causes.html">Причины ошибок ESM</a></li>
 </ul>
 
 

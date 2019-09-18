@@ -8,14 +8,17 @@ Main page
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Содержание:
    
    enb.rst
    mme.rst
    ims.rst
    mbmsgw.rst
+   interfaces.rst
    protocols.rst
    timers.rst
+   emm_causes.rst
+   esm_causes.rst
 
 Indices and tables
 ==================

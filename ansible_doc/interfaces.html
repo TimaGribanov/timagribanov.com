@@ -1,0 +1,316 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Интерфейсы &#8212; Документация Amarisoft VoLTE Document 0</title>
+    <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="Протоколы" href="protocols.html" />
+    <link rel="prev" title="mbmsgw.cfg" href="mbmsgw.html" />
+   
+  <link rel="stylesheet" href="static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1><a class="toc-backref" href="#id16">Интерфейсы</a><a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="contents topic" id="id2">
+<p class="topic-title first">Содержание</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id1" id="id16">Интерфейсы</a><ul>
+<li><a class="reference internal" href="#lte" id="id17">LTE</a><ul>
+<li><a class="reference internal" href="#lte-uu" id="id18">LTE-Uu</a></li>
+<li><a class="reference internal" href="#ue-mme" id="id19">UE — MME</a></li>
+<li><a class="reference internal" href="#x2" id="id20">X2</a></li>
+<li><a class="reference internal" href="#m2" id="id21">M2</a></li>
+<li><a class="reference internal" href="#s1-mme-s1-u" id="id22">S1-MME и S1-U</a></li>
+<li><a class="reference internal" href="#s11" id="id23">S11</a></li>
+<li><a class="reference internal" href="#sgs" id="id24">SGs</a></li>
+<li><a class="reference internal" href="#s6a" id="id25">S6a</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ims" id="id26">IMS</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>На этой странице рассмотрены интерфейсы системы. Подробно про протоколы верхних уровней можно прочитать на странице «<a class="reference external" href="https://timagribanov.github.io/ansible_doc/protocols.html">Протоколы</a>».</p>
+<div class="section" id="lte">
+<h2><a class="toc-backref" href="#id17">LTE</a><a class="headerlink" href="#lte" title="Ссылка на этот заголовок">¶</a></h2>
+<p>В системе LTE от Amarisoft используются следующие интерфейсы:</p>
+<ul class="simple">
+<li>LTE-Uu;</li>
+<li>UE — MME;</li>
+<li>X2;</li>
+<li>M2;</li>
+<li>S1-MME;</li>
+<li>S1-U;</li>
+<li>S11;</li>
+<li>SGs;</li>
+<li>S6a.</li>
+</ul>
+<p>Более подробно каждый из интерфейсов рассмотрен ниже.</p>
+<div class="section" id="lte-uu">
+<h3><a class="toc-backref" href="#id18">LTE-Uu</a><a class="headerlink" href="#lte-uu" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Интерфейс между UE и eNB.</p>
+<div class="figure align-center" id="id12">
+<a class="reference internal image-reference" href="images/Uu.jpg"><img alt="LTE-Uu" src="images/Uu.jpg" style="width: 373.0px; height: 225.0px;" /></a>
+<p class="caption"><span class="caption-text">Стек протоколов интерфейса LTE-Uu</span></p>
+</div>
+<p>Физический уровень радиоинтерфейса LTE предоставляет передачу данных на верхние уровни. Доступ к этим сервисам происходит посредством использования транспортного канала через подуровень MAC. Физический уровень должен осуществлять следующие функции:</p>
+<ul class="simple">
+<li>Обнаружение ошибок на транспортном канале и их индиакия на уровни выше;</li>
+<li>FEC-шифрование/дешифрование транспортного канала;</li>
+<li>Hybrid ARQ soft-combining;</li>
+<li>Согласование скорости педерачи в кодированном транспортном канале с физическим каналом;</li>
+<li>Наложение кодированного транспортного канала на физический канал;</li>
+<li>Определение мощности (power weighting) физических каналов;</li>
+<li>Модуляция и демодуляция физических каналов;</li>
+<li>Синхронизация частот и времени;</li>
+<li>Измерение характеристик радио и их индикация на верхние уровни;</li>
+<li>MIMO;</li>
+<li>TX diversity;</li>
+<li>Формирование лучей;</li>
+<li>RF processing.</li>
+</ul>
+<div class="line-block">
+<div class="line">Спецификации:</div>
+<div class="line"><a class="reference external" href="https://www.etsi.org/deliver/etsi_ts/136200_136299/136201/15.02.00_60/ts_136201v150200p.pdf">3GPP TS 36.201</a> — Evolved Universal Terrestrial Radio Access (E-UTRA); LTE physical layer; General description</div>
+<div class="line"><a class="reference external" href="https://www.etsi.org/deliver/etsi_ts/136200_136299/136211/15.06.00_60/ts_136211v150600p.pdf">3GPP TS 36.211</a> — Evolved Universal Terrestrial Radio Access (E-UTRA); Physical channels and modulation</div>
+<div class="line"><a class="reference external" href="https://www.etsi.org/deliver/etsi_ts/136200_136299/136212/15.06.00_60/ts_136212v150600p.pdf">3GPP TS 36.212</a> — Evolved Universal Terrestrial Radio Access (E-UTRA); Multiplexing and channel coding</div>
+<div class="line"><a class="reference external" href="https://www.etsi.org/deliver/etsi_ts/136200_136299/136213/15.06.00_60/ts_136213v150600p.pdf">3GPP TS 36.213</a> — Evolved Universal Terrestrial Radio Access (E-UTRA); Physical layer procedures</div>
+<div class="line"><a class="reference external" href="https://www.etsi.org/deliver/etsi_ts/136200_136299/136214/15.03.00_60/ts_136214v150300p.pdf">3GPP TS 36.214</a> — Evolved Universal Terrestrial Radio Access (E-UTRA); Physical layer; Measurements</div>
+</div>
+</div>
+<div class="section" id="ue-mme">
+<h3><a class="toc-backref" href="#id19">UE — MME</a><a class="headerlink" href="#ue-mme" title="Ссылка на этот заголовок">¶</a></h3>
+</div>
+<div class="section" id="x2">
+<h3><a class="toc-backref" href="#id20">X2</a><a class="headerlink" href="#x2" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Интерфейс между двумя eNB.</p>
+<div class="figure align-center" id="id13">
+<a class="reference internal image-reference" href="images/X2.jpg"><img alt="X2" src="images/X2.jpg" style="width: 514.0px; height: 316.0px;" /></a>
+<p class="caption"><span class="caption-text">Стек протоколов интерфейса X2</span></p>
+</div>
+<div class="section" id="id3">
+<h4>Уровень 1 интерфейса X2<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Основными функциями первого уровня интерфейса X2 являются:</p>
+<ul class="simple">
+<li>Интерфейс до физического носителя;</li>
+<li>Разграничение кадров;</li>
+<li>Возможность извлечения временных параметров (Line clock extraction, не уверен, как это правильно звучит);</li>
+<li>Извлечение и генерация предупреждений первого уровня;</li>
+<li>Контроль за качеством передачи.</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h4>Сигнализация по X2<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Интерфейс X2 предоставляет следующие функции сигнализации:</p>
+<ul class="simple">
+<li>Наблюдение за надёжной передачей сообщений протокола X2-AP поверх интерфейса X2;</li>
+<li>Наблюдение за сетевым взаимодействием и маршрутизацией;</li>
+<li>Наблюдение за избыточностью в сигнальной сети;</li>
+<li>Поддержка контроля потока и контроля загруженности.</li>
+</ul>
+</div>
+<div class="section" id="l2">
+<h4>L2 — Канальный уровень<a class="headerlink" href="#l2" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Поддерживается любой протокол канального уровня (например, PPP, Ethernet).</p>
+</div>
+<div class="section" id="id5">
+<h4>Сетевой уровень<a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h4>
+<ul class="simple">
+<li>eNB поддерживает IPv6 и/или IPv4;</li>
+<li>Сетевой уровень интерфейса eNB–eNB при доставке сообщений X2-AP поддерживает только передачу точка-точка;</li>
+<li>eNB поддерживает Diffserv Code Point marking.</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h4>Транспортный уровень<a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h4>
+<p>В носителе (bearer) сигнализации в качестве протокола транспортного уровня поддерживается SCTP.</p>
+<ul class="simple">
+<li>SCTP (Strema Control Transmission Protocol) разработан в IETF рабочей группой Sigtran с целью передачи различных сигнальных протоколов поверх IP-сети;</li>
+<li>В одной паре eNB устанавливается только одна SCTP-ассоциация;</li>
+<li>SCTP-ассоциацию устанавливает eNB. В качестве порта назначения (SCTP Destination Port) для X2-AP IANA постановила использовать 36422.</li>
+</ul>
+<div class="line-block">
+<div class="line">Спецификации:</div>
+<div class="line"><a class="reference external" href="https://www.etsi.org/deliver/etsi_ts/136400_136499/136420/15.01.00_60/ts_136420v150100p.pdf">3GPP TS 36.420</a> — Evolved Universal Terrestrial Radio Access Network (E-UTRAN); X2 general aspects and principles</div>
+<div class="line"><a class="reference external" href="https://www.etsi.org/deliver/etsi_ts/136400_136499/136421/15.00.00_60/ts_136421v150000p.pdf">3GPP TS 36.421</a> — Evolved Universal Terrestrial Radio Access Network (E-UTRAN); X2 layer 1.</div>
+<div class="line"><a class="reference external" href="https://www.etsi.org/deliver/etsi_ts/136400_136499/136422/15.01.00_60/ts_136422v150100p.pdf">3GPP TS 36.422</a> — Evolved Universal Terrestrial Radio Access Network (E-UTRAN); X2 signalling transport</div>
+</div>
+</div>
+</div>
+<div class="section" id="m2">
+<h3><a class="toc-backref" href="#id21">M2</a><a class="headerlink" href="#m2" title="Ссылка на этот заголовок">¶</a></h3>
+</div>
+<div class="section" id="s1-mme-s1-u">
+<h3><a class="toc-backref" href="#id22">S1-MME и S1-U</a><a class="headerlink" href="#s1-mme-s1-u" title="Ссылка на этот заголовок">¶</a></h3>
+<div class="line-block">
+<div class="line">S1-MME — интерфейс между eNB и MME, предназначен для передачи в основном сигнальной информации.</div>
+<div class="line">S1-U — интерфейс между eNB и S-GW, предназначен для передачи сигнальной и пользовательской информации по протоколам S1-AP и GTPv1-U, соответственно.</div>
+</div>
+<div class="figure align-center" id="id14">
+<a class="reference internal image-reference" href="images/S1-MME.png"><img alt="S1-MME" src="images/S1-MME.png" style="width: 405.0px; height: 253.0px;" /></a>
+<p class="caption"><span class="caption-text">Стек протоколов интерфейса S1-MME</span></p>
+</div>
+<div class="figure align-center" id="id15">
+<a class="reference internal image-reference" href="images/S1-U.jpg"><img alt="S1-U" src="images/S1-U.jpg" style="width: 321.0px; height: 411.0px;" /></a>
+<p class="caption"><span class="caption-text">Стек протоколов интерфейса S1-U</span></p>
+</div>
+<div class="section" id="s1">
+<h4>Уровень 1 интерфейса S1<a class="headerlink" href="#s1" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Основными функциями первого уровня интерфейса X2 являются:</p>
+<ul class="simple">
+<li>Интерфейс до физического носителя;</li>
+<li>Разграничение кадров;</li>
+<li>Возможность извлечения временных параметров (Line clock extraction, не уверен, как это правильно звучит);</li>
+<li>Извлечение и генерация предупреждений первого уровня;</li>
+<li>Контроль за качеством передачи.</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h4>Сигнализация по S1<a class="headerlink" href="#id7" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Интерфейс S1 предоставляет следующие функции сигнализации:</p>
+<ul class="simple">
+<li>Наблюдение за надёжной передачей сообщений протокола S1-AP поверх интерфейса S1-MME;</li>
+<li>Наблюдение за сетевым взаимодействием и маршрутизацией;</li>
+<li>Наблюдение за избыточностью в сигнальной сети;</li>
+<li>Поддержка контроля потока и контроля загруженности.</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h4>L2 — Канальный уровень<a class="headerlink" href="#id8" title="Ссылка на этот заголовок">¶</a></h4>
+<p>Поддерживается любой протокол канального уровня (например, PPP, Ethernet).</p>
+</div>
+<div class="section" id="id9">
+<h4>Сетевой уровень<a class="headerlink" href="#id9" title="Ссылка на этот заголовок">¶</a></h4>
+<ul class="simple">
+<li>eNB и MME поддерживают IPv6 и/или IPv4;</li>
+<li>Сетевой уровень интерфейса S1-MME при доставке сообщений S1-AP поддерживает только передачу точка-точка;</li>
+<li>eNB и MME поддерживают Diffserv Code Point marking.</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h4>Транспортный уровень<a class="headerlink" href="#id10" title="Ссылка на этот заголовок">¶</a></h4>
+<p>В носителе (bearer) сигнализации S1-MME в качестве протокола транспортного уровня поддерживается SCTP.</p>
+<ul class="simple">
+<li>SCTP (Strema Control Transmission Protocol) разработан в IETF рабочей группой Sigtran с целью передачи различных сигнальных протоколов поверх IP-сети;</li>
+<li>В одной паре eNB–MME устанавливается только одна SCTP-ассоциация;</li>
+<li>SCTP-ассоциацию устанавливает eNB. В качестве порта назначения (SCTP Destination Port) для X2-AP IANA постановила использовать 36412.</li>
+</ul>
+<div class="line-block">
+<div class="line">Спецификации:</div>
+<div class="line"><a class="reference external" href="https://www.etsi.org/deliver/etsi_ts/136400_136499/136410/15.00.00_60/ts_136410v150000p.pdf">3GPP TS 36.410</a> — Evolved Universal Terrestrial Radio Access Network (E-UTRAN); S1 layer 1 general aspects and principles</div>
+<div class="line"><a class="reference external" href="https://www.etsi.org/deliver/etsi_ts/136400_136499/136411/15.00.00_60/ts_136411v150000p.pdf">3GPP TS 36.411</a> — Evolved Universal Terrestrial Radio Access Network (E-UTRAN); S1 layer 1</div>
+<div class="line"><a class="reference external" href="https://www.etsi.org/deliver/etsi_ts/136400_136499/136412/15.00.00_60/ts_136412v150000p.pdf">3GPP TS 36.412</a> — Evolved Universal Terrestrial Radio Access Network (E-UTRAN); S1 signalling transport</div>
+</div>
+</div>
+</div>
+<div class="section" id="s11">
+<h3><a class="toc-backref" href="#id23">S11</a><a class="headerlink" href="#s11" title="Ссылка на этот заголовок">¶</a></h3>
+</div>
+<div class="section" id="sgs">
+<h3><a class="toc-backref" href="#id24">SGs</a><a class="headerlink" href="#sgs" title="Ссылка на этот заголовок">¶</a></h3>
+</div>
+<div class="section" id="s6a">
+<h3><a class="toc-backref" href="#id25">S6a</a><a class="headerlink" href="#s6a" title="Ссылка на этот заголовок">¶</a></h3>
+</div>
+</div>
+<div class="section" id="ims">
+<h2><a class="toc-backref" href="#id26">IMS</a><a class="headerlink" href="#ims" title="Ссылка на этот заголовок">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="mbmsgw.html" title="предыдущая глава">mbmsgw.cfg</a></li>
+      <li>Next: <a href="protocols.html" title="следующая глава">Протоколы</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Искать" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Содержание:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="enb.html">enb.сfg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mme.html">mme.cfg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ims.html">ims.cfg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mbmsgw.html">mbmsgw.cfg</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Интерфейсы</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#lte">LTE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ims">IMS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="protocols.html">Протоколы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timers.html">Таймеры 3GPP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emm_causes.html">Причины ошибок EMM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="esm_causes.html">Причины ошибок ESM</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Timofey Gribanov.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="sources/interfaces.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

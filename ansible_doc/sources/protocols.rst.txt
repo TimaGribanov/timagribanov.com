@@ -4,11 +4,15 @@
 .. contents::
    :depth: 3
 
+
+LTE
+---
 В системе LTE от Amarisoft используются следующие протоколы:
 
 * X2-AP;
 * PDCP;
 * NAS;
+* M2-AP;
 * S1-AP;
 * GTPv2-C;
 * GTPv1-U;
@@ -17,25 +21,108 @@
 Более подробно каждый из протоколов рассмотрен ниже.
 
 X2-AP
------
+~~~~~
+Протокол X2-AP используется для управления мобильностью UE внутри E-UTRAN и для предоставления следующих функций:
+
+* Управление мобильностью (Mobility Management);
+* Управление загруженностью (Load Management);
+* Сообщение об основных ошибках (Reporting of General Error Situations);
+* Перенастройка X2 (Resetting the X2);
+* Установление X2 (Setting the X2);
+* Обновление конфигураций eNB (eNB Configuration Udate).
+
+Протокол определён спецификацией `3GPP TS 36.423`_.
 
 PDCP
-----
+~~~~
+PDCP = Packet Data Convergence Protocol (Протокол конвергенции пакетных данных).
+
+Протокол PDCP — часть плоскостей управления и пользователя радиоинтерфейса LTE-Uu.
+
+Основные сервисы и функции проктола в плоскости управления:
+
+* Шифрование и защита целостности;
+* Передача данных панели управления.
+
+Основные сервисы и функции проктола в плоскости пользователя:
+
+* Сжатие и декомпрессия заголовков (только для ROHC);
+* Передача пользовательских данных;
+* Поочерёдная доставка PDE верхнего уровняв процессе процедуры PDCP-восстановления для RLC AP;
+* Передача PDCP SDU во время хэндовера для RLC AM;
+* Шифрование и дешифрование;
+* Отброс SDU по времени в канале вверх (uplink).
+
+Спецификация: `3GPP TS 36.323`_ — Evolved Universal Terrestrial Radio Access (E-UTRA); Packet Data Convergence Protocol (PDCP) specification
 
 NAS
----
+~~~
+NAS = Non-access Stratum (Слой без доступа).
+
+NAS — верхний слой плоскости управления между UE и MME в радиоинтерфейсе. Главные функции протоколов, входящих в NAS, — поддержка мобильности UE и поддежка процедур управления сессиями для установления и поддержания IP-соединения между UE и P-GW.
+
+Протокол управления NAS выполняет следующие функции:
+
+* Управление EPS носиетелем (EPS bearer);
+* Аутентификация;
+* Оперирование мобильностью ECM-IDLE;
+* Создание запросов пейджинга в ECM-IDLE;
+* Управление безопасностью.
+
+Спецификация: `3GPP TS 24.301`_ — Non-Access-Stratum (NAS) protocol for Evolved Packet System (EPS); Stage 3.
+
+M2-AP
+~~~~~
 
 S1-AP
------
+~~~~~
+S1-AP = S1-Application Part.
 
-GTP
----
+S1-AP предоставляет сигнальные сервисы между E-UTRAN и EPC и обладает следующими функциями:
+
+* Управление E-RAB;
+* Передача первоначального контекста (Initial Context Transfer);
+* Индикация возможностей UE (UE Capability Info Indication);
+* Мобильность;
+* Управление интерфейсом S1;
+* Передача NAS-сигнализации;
+* Освобождение S1 UE-контекста (S1 UE context Release);
+* Модификаци UE-контекста (UE Context Modification);
+* Передача состояния (Status Transfer);
+* Отслеживание (Trace);
+* Доклад о местоположении (Location Reporting);
+* Туннелирование S1 CDMA2000;
+* Передача предупреждающих сообщений;
+* Управление информацией RAN;
+* Передача настроек.
+
+Спецификация: `3GPP TS 36.413`_ — Evolved Universal Terrestrial Radio Access Network (E-UTRAN); S1 Application Protocol (S1AP).
 
 GTPv2-C
 ~~~~~~~
 
 GTPv1-U
 ~~~~~~~
+GTPv1-U = GPRS Tunnelling Protocol version 1 User Plane.
+
+GTP-U используется в интерфейсах S1-U, X2, S4, S5 И S8 EPS. GTP-U используется для переноса инкапсулированных T-PDU и сигнальных сообщений между заданными конечными точками GTP-U-туннеля. Идентификатор конечной точки туннеля (TEID, Tunnel Endpoint ID), содержащийся в заголовке GTP-пакета, сообщает, какому туннелю принадлежит T-PDU.
+
+Транспортный носитель (transport bearer) идентифицируется при помощи GTP-U TEID и IP-адреса (source TEID, destination TEID, source IP address, destination IP address).
+
+Спецификация: `3GPP TS 29.281`_ - General Packet Radio System (GPRS) Tunnelling Protocol User Plane (GTPv1-U).
 
 Diameter
---------
+~~~~~~~~
+
+
+IMS
+---
+
+
+
+.. ссылки
+.. _`3GPP TS 24.301`: https://www.etsi.org/deliver/etsi_ts/124300_124399/124301/15.07.00_60/ts_124301v150700p.pdf
+.. _`3GPP TS 29.281`: https://www.etsi.org/deliver/etsi_ts/129200_129299/129281/15.05.00_60/ts_129281v150500p.pdf
+.. _`3GPP TS 36.323`: https://www.etsi.org/deliver/etsi_ts/136300_136399/136323/15.04.00_60/ts_136323v150400p.pdf
+.. _`3GPP TS 36.413`: https://www.etsi.org/deliver/etsi_ts/136400_136499/136413/15.06.00_60/ts_136413v150600p.pdf
+.. _`3GPP TS 36.423`: https://www.etsi.org/deliver/etsi_ts/136400_136499/136423/15.02.00_60/ts_136423v150200p.pdf

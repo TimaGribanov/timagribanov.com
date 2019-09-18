@@ -208,6 +208,6 @@
     |          |          | INACTIVE PENDING      |                 |                      |              |
     +----------+----------+-----------------------+-----------------+----------------------+--------------+
 
-.. _`3GPP TS 24.301`: https://www.arib.or.jp/english/html/overview/doc/STD-T63v11_00/5_Appendix/Rel12/24/24301-c80.pdf
+.. _`3GPP TS 24.301`: https://www.etsi.org/deliver/etsi_ts/124300_124399/124301/15.07.00_60/ts_124301v150700p.pdf
 
-.. _`3GPP TS 24.008`: https://www.etsi.org/deliver/etsi_ts/124000_124099/124008/13.07.00_60/ts_124008v130700p.pdf
+.. _`3GPP TS 24.008`: https://www.etsi.org/deliver/etsi_ts/124000_124099/124008/15.06.00_60/ts_124008v150600p.pdf
