@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Поймай жабу v2</title>
+    <!-- base href="http://localhost:63342/timagribanov.github.io/"/ -->
+    <base href="https://timagribanov.github.io/"/>
+
+    <style>
+        #container {
+            width: 900px;
+            height: 900px;
+            border: black 2px solid;
+            margin: auto;
+        }
+
+        #pic {
+            position: relative;
+            width: 100px;
+            height: 76px;
+        }
+
+        footer {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function randomInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        const i = randomInteger(5, 15);
+
+        let coeff;
+
+        if (i === 5) {coeff = 2}
+        else if (i === 6) {coeff = 2.5}
+        else if (i === 7) {coeff = 3}
+        else if (i === 8) {coeff = 3.5}
+        else if (i === 9) {coeff = 4}
+        else if (i === 10) {coeff = 4.5}
+        else if (i === 11) {coeff = 5}
+        else if (i === 12) {coeff = 5.5}
+        else if (i === 13) {coeff = 6}
+        else if (i === 14) {coeff = 6.5}
+        else if (i === 15) {coeff = 7}
+
+        let width = 100;
+        let height = 76;
+        let ymax;
+        let xmax;
+        let j = -1;
+        const frog = document.getElementById("pic");
+
+        function catcher() {
+            j++;
+            if (j === i) {
+                youWon();
+            }
+            else {
+                width = width * coeff; //здесь не та схема умножения
+                height = width * coeff;
+                ymax = 900 - height;
+                xmax = 900 - width;
+                frog.style.top = (Math.floor(Math.random() * ymax) + 1) + "px";
+                frog.style.left = (Math.floor(Math.random() * xmax) + 1) + "px";
+                frog.style.width = width;
+                frog.style.height = height;
+            }
+        }
+
+        function youWon() {
+
+        }
+    </script>
+</head>
+<body onload="catcher()">
+    <div id="container">
+        <img id="pic" src="froggs/55.jpg" alt="Жаба скачет" onclick="catcher()">
+    </div>
+
+    <footer>
+        <a href="froggs.html">Обрытно к случайным жабам</a>
+    </footer>
+</body>
+</html>
