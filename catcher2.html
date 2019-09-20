@@ -66,32 +66,29 @@
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
-        const i = randomInteger(5, 15); //number of needed clicks to catch a frog
-
+        var i = randomInteger(5, 15); //number of needed clicks to catch a frog
+        var j = -1; //counter of done clicks
         let width = 100;
         let height = 76;
-        let ymax; //coefficients to move the resized the frog
-        let xmax;
-        let j = 0; //counter of done clicks
-        let coeff = 600 / i; //coefficient to resize the frog
-
 
         function catcher() {
-            const frog = document.getElementById("pic");
+            var coeff = 600 / i; //coefficient to resize the frog
+            var frog = document.getElementById("pic");
+
             j++;
             if (j === i) {
                 youWon();
             }
             else {
-                width = width + coeff;
-                height = width + coeff;
-                ymax = 900 - height;
-                xmax = 900 - width;
+                let ymax = 900 - height;
+                let xmax = 900 - width;
                 frog.style.top = (Math.floor(Math.random() * ymax) + 1) + "px";
                 frog.style.left = (Math.floor(Math.random() * xmax) + 1) + "px";
-                frog.style.width = width;
-                frog.style.height = height;
+                frog.style.width = width + "px";
+                frog.style.height = height + "px";
             }
+            width = width + coeff;
+            height = height +coeff;
         }
 
         function youWon() {
@@ -151,7 +148,8 @@
                 'froggs/94.jpg',
                 'froggs/95.jpg',
                 'froggs/99.jpg',
-                'froggs/100.jpg'
+                'froggs/100.jpg',
+                'froggs/101.jpg'
             ];
 
             var winFrog = document.getElementById("winPic");
@@ -160,6 +158,12 @@
             var winner = document.getElementById("winSplash");
 
             winner.style.display = "block";
+        }
+
+        function test(){
+            var testpic = document.getElementById("pic");
+
+            testpic.style.width = "200px";
         }
     </script>
 </head>
@@ -171,7 +175,7 @@
     </div>
 
     <div id="container">
-        <img id="pic" src="froggs/55.jpg" alt="Жаба скачет" onclick="catcher()">
+        <img id="pic" src="froggs/55.jpg" alt="Жаба скачет" onclick="catcher()"/>
     </div>
 
     <footer>
