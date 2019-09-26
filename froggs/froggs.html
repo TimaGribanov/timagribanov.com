@@ -8,13 +8,13 @@
 
     <script>
         function start() {
-            var modal = document.getElementById("attention");
+            var modal = document.getElementById('attention');
 
-            modal.style.display = "block";
+            modal.style.display = 'block';
 
-            var close = document.getElementById("attentionImg");
+            var close = document.getElementById('attentionImg');
             close.onclick = function() {
-                modal.style.display = "none";
+                modal.style.display = 'none';
                 frogs();
             };
         }
@@ -130,17 +130,32 @@
                 'froggs/img/107.jpg',
                 'froggs/img/108.jpg',
                 'froggs/img/109.jpg',
-                'froggs/img/110.jpg'
+                'froggs/img/110.jpg',
+                'froggs/img/111.jpg',
+                'froggs/img/112.jpg',
+                'froggs/img/113.jpg',
+                'froggs/img/114.jpg',
+                'froggs/img/115.jpg',
+                'froggs/img/116.jpg',
+                'froggs/img/117.jpg',
+                'froggs/img/118.jpg',
+                'froggs/img/119.jpg'
             ];
-            var frog = document.getElementById("pic");
+            var frog = document.getElementById('pic');
             frog.src = pictures[Math.floor(Math.random() * pictures.length)];
         }
     </script>
 
     <style>
+        #mainFrogg {
+            text-align: center;
+            height: 95vh;
+        }
+
         #button {
             width: 100px;
             height: 100px;
+            cursor: pointer;
         }
 
         #button:active {
@@ -148,11 +163,6 @@
             height: 50px;
             padding-top: 25px;
             padding-bottom: 25px;
-        }
-
-        #mainFrogg {
-            text-align: center;
-            height: 100vh;
         }
 
         #pic {
@@ -175,13 +185,11 @@
         #attentionImg {
             width: 625px;
             height: 832px;
-        }
-
-        #attentionImg {
+            cursor: pointer;
             animation-name: zoom;
             animation-duration: 0.6s;
         }
-        
+
         @keyframes zoom {
             from {transform:scale(0)}
             to {transform:scale(1)}
@@ -205,8 +213,8 @@
 
     <footer>
         <a href="froggs/gallery.html">Каталог жаб</a>
-        <a href="froggs/catcher.html">Погоняй жабу</a>
-        <a href="froggs/catcher2.html">Поймай жабу</a>
+        <a href="froggs/follower.html">Погоняй жабу</a>
+        <a href="froggs/catcher.html">Поймай жабу</a>
     </footer>
 </body>
 </html>

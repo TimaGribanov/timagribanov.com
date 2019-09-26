@@ -118,46 +118,125 @@
                 'froggs/img/107.jpg',
                 'froggs/img/108.jpg',
                 'froggs/img/109.jpg',
-                'froggs/img/110.jpg'
+                'froggs/img/110.jpg',
+                'froggs/img/111.jpg',
+                'froggs/img/112.jpg',
+                'froggs/img/113.jpg',
+                'froggs/img/114.jpg',
+                'froggs/img/115.jpg',
+                'froggs/img/116.jpg',
+                'froggs/img/117.jpg',
+                'froggs/img/118.jpg',
+                'froggs/img/119.jpg'
             ];
 
-            const gallery = document.getElementById("gallery");
+            const gallery = document.getElementById('gallery');
             let pic;
             for (var i = 0; i < pictures.length; i++) {
-                pic = document.createElement("IMG");
+                pic = document.createElement('IMG');
                 pic.src =  pictures[i];
-                pic.style.height = "100px";
-                pic.style.marginRight = "20px";
-                pic.style.marginBottom = "20px";
+                pic.onclick = showFrog;
+                pic.style.height = '100px';
+                pic.style.marginRight = '20px';
+                pic.style.marginBottom = '20px';
+                pic.style.cursor = 'pointer';
                 gallery.appendChild(pic);
             }
 
             let length = pictures.length.toString();
             let frogWord;
-            if (length[2] === '1') { frogWord = "жаба" }
-            else if (length[2] === '2' || length[2] === '3' || length[2] === '4') { frogWord = "жабы" }
-            else { frogWord = "жаб" }
-            document.getElementById("frogCounter").innerHTML = `В нашем каталоге на данный момент ${i} ${frogWord}.`;
+            if (length[2] === '1') { frogWord = 'жаба' }
+            else if (length[2] === '2' || length[2] === '3' || length[2] === '4') { frogWord = 'жабы' }
+            else { frogWord = 'жаб' }
+            document.getElementById('frogCounter').innerHTML = `В нашем каталоге на данный момент ${i} ${frogWord}.`;
+        }
+
+        function showFrog() {
+            const modal = document.getElementById('bigPicture');
+            let picture = document.getElementById('bigFrog');
+            const close = document.getElementById('close');
+
+            picture.src = this.src;
+            modal.style.display = 'block';
+
+            close.onclick = function() {
+                modal.style.display = 'none';
+            };
         }
     </script>
 
     <style>
+        #bigPicture {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            text-align: center;
+            overflow: auto;
+            padding-top: 10%;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            background-color: rgba(0,0,0,0.6);
+        }
+
+        #bigPicture p {
+            font-size: 20pt;
+            color: white;
+        }
+
+        #bigPicture img {
+            max-height: 500px;
+        }
+
+        #bigPicture span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 20px;
+            font-size: 60pt;
+            color: white;
+            cursor: pointer;
+        }
+
+        #bigPicture span:hover {
+            background-color: #aaa;
+        }
+
+        #counterContainer {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
         #gallery {
             width: 100%;
             margin-top: 20px;
             margin-left: 20px;
         }
+
+        footer {
+            text-align: center;
+        }
     </style>
 </head>
 <body onload="frogs()">
+    <div id="bigPicture">
+        <span id="close">x</span><br/>
+        <img id="bigFrog" src="" alt=""/>
+        <p>Вот такая вот классная жаба, не правда ли?</p>
+    </div>
+
     <div id="gallery">
-        <span id="frogCounter"></span>
+        <div id="counterContainer"><span id="frogCounter"></span></div>
     </div>
 
     <footer>
         <a href="froggs/froggs.html">Обрытно к случайным жабам</a>
-        <a href="froggs/catcher.html">Погоняй жабу</a>
-        <a href="froggs/catcher2.html">Поймай жабу</a>
+        <a href="froggs/follower.html">Погоняй жабу</a>
+        <a href="froggs/catcher.html">Поймай жабу</a>
     </footer>
 </body>
 </html>
