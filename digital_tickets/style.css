@@ -1,0 +1,74 @@
+@font-face {
+    font-family: BloggerSans;
+    src: url('Blogger_Sans.otf');
+}
+
+body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 1000px;
+    margin: 20px auto auto;
+
+    font-family: 'BloggerSans', sans-serif;
+}
+
+.container {
+    width: 1000px;
+    border: 1px black solid;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/**************
+* FIRST BLOCK *
+**************/
+
+#trip .row {
+    margin-bottom: 10px;
+}
+
+#trip input {
+    height: 20px;
+    margin-right: 10px;
+}
+
+#trip span {
+    margin-right: 10px;
+}
+
+#trip #checkbox {
+    position: relative;
+    top: 5px;
+}
+
+#trip .trip-date {
+    position: relative;
+    bottom: 2px;
+}
+
+#trip #promocode {
+    width: 170px;
+}
+
+/***************
+* SECOND BLOCK *
+***************/
+
+/**************
+* THIRD BLOCK *
+**************/
+
+#user .row {
+    margin-bottom: 10px;
+}
+
+#user input {
+    height: 20px;
+    margin-right: 10px;
+}
+
+#user #nationality {
+    width: 320px;
+}

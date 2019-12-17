@@ -10,16 +10,162 @@
 </head>
 <body>
     <div class="container">
-        <form id="user">
-            <input type="text" placeholder="Место отправления"/>
-            <input type="date" placeholder="Дата поездки туда"/>
-            <input type="checkbox"/>
-            <input type="number" placeholder="Пассажиры"/>
-            <input type="text" placeholder="Место назначения"/>
-            <input type="date" placeholder="Дата поездки обратно"/>
-            <input type="text" placeholder="Промокод"/>
+        <form id="trip">
+            <div class="row">
+                <input type="text" placeholder="Место отправления"/>
+                <input type="date" class="trip-date" placeholder="Дата поездки туда"/>
+                <input type="checkbox" id="checkbox"/><span>Поездка в одну сторону</span>
+                <input type="number" placeholder="Пассажиры"/>
+            </div>
+            <div class="row">
+                <input type="text" placeholder="Место назначения"/>
+                <input type="date" class="trip-date" placeholder="Дата поездки обратно"/>
+                <input type="text" id="promocode" placeholder="Промокод"/>
+            </div>
             <button type="submit">Найти</button>
         </form>
+    </div>
+
+    <div class="container">
+        <span id="town-from"></span><span>&gt;</span><span id="town-to"></span>
+        <div class="route-info"></div>
+    </div>
+
+    <div class="container">
+        <form id="user">
+            <div class="row">
+                <input type="text" placeholder="Карта лояльности"/>
+            </div>
+            <div class="row">
+                <input type="text" placeholder="Фамилия*"/>
+                <input type="text" placeholder="Имя*"/>
+                <input type="text" placeholder="Отчество"/>
+            </div>
+            <div class="row">
+                <input type="email" placeholder="Электронная почта*"/>
+                <input type="tel" placeholder="Телефон*"/>
+            </div>
+            <div class="row">
+                <input type="date" placeholder="Дата рождения*"/>
+                <span>Пол</span>
+            </div>
+            <div class="row">
+                <input type="text" id="nationality" placeholder="Гражданство или страна, выдавшая документ*"/>
+                <input type="text" placeholder="Тип документа*"/>
+                <input type="text" placeholder="Номер документа*"/>
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+        <div id="info"></div>
+        <div id="bus">
+            <div class="seat-row"> <!-- 3,4 -->
+                <div class="blank"></div>
+                <div class="blank"></div>
+                <div class="blank"></div>
+                <div class="free"></div>
+                <div class="free"></div>
+            </div>
+            <div class="seat-row"> <!-- 5–8 -->
+                <div class="occupied"></div>
+                <div class="free"></div>
+                <div class="blank"></div>
+                <div class="free"></div>
+                <div class="occupied"></div>
+            </div>
+            <div class="seat-row"> <!-- 9–12 -->
+                <div class="free"></div>
+                <div class="free"></div>
+                <div class="blank"></div>
+                <div class="occupied"></div>
+                <div class="free"></div>
+            </div>
+            <div class="seat-row"> <!-- 13–16 -->
+                <div class="free"></div>
+                <div class="free"></div>
+                <div class="blank"></div>
+                <div class="free"></div>
+                <div class="free"></div>
+            </div>
+            <div class="seat-row"> <!-- 17–20 -->
+                <div class="free"></div>
+                <div class="free"></div>
+                <div class="blank"></div>
+                <div class="free"></div>
+                <div class="free"></div>
+            </div>
+            <div class="seat-row"> <!-- 21–24 -->
+                <div class="free"></div>
+                <div class="free"></div>
+                <div class="blank"></div>
+                <div class="free"></div>
+                <div class="free"></div>
+            </div>
+            <div class="seat-row"> <!-- 25–26 -->
+                <div class="free"></div>
+                <div class="free"></div>
+                <div class="blank"></div>
+                <div class="free"></div>
+                <div class="free"></div>
+            </div>
+            <div class="seat-row"> <!-- 27–28 -->
+                <div class="free"></div>
+                <div class="free"></div>
+                <div class="blank"></div>
+                <div class="free"></div>
+                <div class="free"></div>
+            </div>
+            <div class="seat-row"> <!-- 29–32 -->
+                <div class="free"></div>
+                <div class="free"></div>
+                <div class="blank"></div>
+                <div class="free"></div>
+                <div class="free"></div>
+            </div>
+            <div class="seat-row"> <!-- 33–36 -->
+                <div class="free"></div>
+                <div class="free"></div>
+                <div class="blank"></div>
+                <div class="free"></div>
+                <div class="free"></div>
+            </div>
+            <div class="seat-row"> <!-- 37–40 -->
+                <div class="free"></div>
+                <div class="free"></div>
+                <div class="blank"></div>
+                <div class="free"></div>
+                <div class="free"></div>
+            </div>
+            <div class="seat-row"> <!-- 41–44 -->
+                <div class="free"></div>
+                <div class="free"></div>
+                <div class="blank"></div>
+                <div class="free"></div>
+                <div class="free"></div>
+            </div>
+            <div class="seat-row"> <!-- 45–48 -->
+                <div class="free"></div>
+                <div class="free"></div>
+                <div class="blank"></div>
+                <div class="free"></div>
+                <div class="free"></div>
+            </div>
+            <div class="seat-row"> <!-- 49–52 -->
+                <div class="free"></div>
+                <div class="free"></div>
+                <div class="blank"></div>
+                <div class="free"></div>
+                <div class="free"></div>
+            </div>
+            <div class="seat-row"> <!-- 53–56 -->
+                <div class="free"></div>
+                <div class="free"></div>
+                <div class="blank"></div>
+                <div class="free"></div>
+                <div class="free"></div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
