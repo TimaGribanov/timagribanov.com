@@ -21,6 +21,27 @@ body {
     margin-bottom: 20px;
 }
 
+input,
+button,
+select {
+    font-family: 'BloggerSans', sans-serif;
+    font-size: 12pt;
+    color: dimgrey;
+}
+
+button {
+    cursor: pointer;
+}
+
+h1 {
+    margin: 0 0 20px;
+}
+
+::placeholder {
+    color: dimgray;
+    opacity: 1;
+}
+
 /**************
 * FIRST BLOCK *
 **************/
@@ -32,6 +53,7 @@ body {
 #trip input {
     height: 20px;
     margin-right: 10px;
+    padding: 5px;
 }
 
 #trip span {
@@ -41,11 +63,6 @@ body {
 #trip #checkbox {
     position: relative;
     top: 5px;
-}
-
-#trip .trip-date {
-    position: relative;
-    bottom: 2px;
 }
 
 #trip #promocode {
@@ -67,8 +84,127 @@ body {
 #user input {
     height: 20px;
     margin-right: 10px;
+    padding: 5px;
+}
+
+#user select {
+    height: 32px;
+    margin-right: 10px;
+    padding: 5px;
 }
 
 #user #nationality {
     width: 320px;
+}
+
+/**************************
+* FOURTH AND FIFTH BLOCKS *
+**************************/
+
+#seats-to,
+#seats-from {
+    width: 1000px;
+    height: 820px;
+}
+
+#info-to,
+#info-from {
+    width: 500px;
+    display: inline-block;
+}
+
+.bus {
+    padding: 5px;
+    float: right;
+    width: 230px;
+    height: 670px;
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.blank,
+.free,
+.occupied {
+    display: inline-block;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 1px;
+    width: 30px;
+    height: 30px;
+}
+
+/**************
+* SIXTH BLOCK *
+**************/
+
+#payments {
+    text-align: center;
+}
+
+#payments #bank,
+#payments #mobile {
+    margin-right: 35px;
+}
+
+#payments div {
+    cursor: pointer;
+}
+
+#payments div:hover {
+    opacity: 0.8;
+}
+
+#payments img {
+    height: 50px;
+}
+
+#payments #visa {
+    position: relative;
+    height: 35px;
+    bottom: 10px;
+}
+
+#payments #mts {
+    position: relative;
+    height: 27px;
+    bottom: 14px;
+}
+
+#payments #megafon {
+    position: relative;
+    bottom: 2px;
+}
+
+#payments #yam {
+    margin-top: 15px;
+    position: relative;
+    height: 35px;
+    bottom: 9px;
+}
+
+#payments #payp {
+    position: relative;
+    height: 30px;
+    bottom: 10px;
+}
+
+#payments div {
+    display: inline-block;
+    text-align: center;
+}
+
+#payments-bank input,
+#payments-mobile-1 input,
+#payments-mobile-2 input,
+#payments-internet input {
+    height: 20px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+#payments-bank .row,
+#payments-mobile-1 .row,
+#payments-mobile-2 .row,
+#payments-internet .row {
+    margin-bottom: 10px;
 }
