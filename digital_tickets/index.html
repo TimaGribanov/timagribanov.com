@@ -6,46 +6,52 @@
 
     <link rel="stylesheet" href="style.css"/>
 
+    <script src="https://cdn.jsdelivr.net/alasql/latest/alasql.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="find_route.js"></script>
 </head>
-<body>
+<body onload="loadInfo()">
     <div id="trip-info" class="container">
         <form id="trip">
             <div class="row">
-                <label>
-                    <input type="text" placeholder="Место отправления"/>
+                <label for="town-from-1">
+                    <select id="town-from-1">
+                        <option value="0">Место отправления</option>
+                    </select>
                 </label>
-                <label>
-                    <input type="text" class="trip-date" placeholder="Дата поездки туда" onmousedown="this.type='date';this.style.position = 'relative';this.style.bottom='2px'"/>
+                <label for="date-from-1">
+                    <input type="text" id="date-from-1" class="trip-date" placeholder="Дата поездки туда" onmousedown="this.type='date';this.style.position = 'relative';"/>
                 </label>
-                <label for="checkbox">
-                    <input type="checkbox" id="checkbox"/><span>Поездка в одну сторону</span>
+                <label for="one-way-trip">
+                    <input type="checkbox" id="one-way-trip"/><span>Поездка в одну сторону</span>
                 </label>
-                <label>
-                    <input type="number" placeholder="Пассажиры" min="1"/>
+                <label for="people">
+                    <input type="number" id="people" placeholder="Пассажиры" min="1"/>
                 </label>
             </div>
             <div class="row">
-                <label>
-                    <input type="text" placeholder="Место назначения"/>
+                <label for="town-to-1">
+                    <select id="town-to-1">
+                        <option value="0">Место назначения</option>
+                    </select>
                 </label>
-                <label>
-                    <input type="text" class="trip-date" placeholder="Дата поездки обратно" onmousedown="this.type='date';this.style.position = 'relative';this.style.bottom='2px'"/>
+                <label for="date-to-1">
+                    <input type="text" id="date-to-1" class="trip-date" placeholder="Дата поездки обратно" onmousedown="this.type='date';this.style.position = 'relative';"/>
                 </label>
                 <label for="promocode">
                     <input type="text" id="promocode" placeholder="Промокод"/>
                 </label>
             </div>
-            <button type="submit">Найти</button>
+            <button onclick="getTripInfo()">Найти</button>
         </form>
     </div>
 
     <div id="route" class="container">
         <h1>Выберите подходящий маршрут</h1>
-        <span id="town-from"></span><span>&gt;</span><span id="town-to"></span>
-        <div class="route-info"></div>
 
-        <button type="submit">Далее</button>
+
+        <button>Далее</button>
     </div>
 
     <div id="user-info" class="container">
@@ -116,218 +122,204 @@
                 <div class="blank"></div>
                 <div class="blank"></div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">3</div>
+                <div class="free">4</div>
             </div>
             <div class="seat-row"> <!-- 5–8 -->
-                <div class="occupied"></div>
-                <div class="free"></div>
+                <div class="occupied">5</div>
+                <div class="free">6</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="occupied"></div>
+                <div class="free">7</div>
+                <div class="occupied">8</div>
             </div>
             <div class="seat-row"> <!-- 9–12 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">9</div>
+                <div class="free">10</div>
                 <div class="blank"></div>
-                <div class="occupied"></div>
-                <div class="free"></div>
+                <div class="occupied">11</div>
+                <div class="free">12</div>
             </div>
             <div class="seat-row"> <!-- 13–16 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">13</div>
+                <div class="free">14</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">15</div>
+                <div class="free">16</div>
             </div>
             <div class="seat-row"> <!-- 17–20 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">17</div>
+                <div class="free">18</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">19</div>
+                <div class="free">20</div>
             </div>
             <div class="seat-row"> <!-- 21–24 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">21</div>
+                <div class="free">22</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">23</div>
+                <div class="free">24</div>
             </div>
-            <div class="seat-row"> <!-- 25–26 -->
-                <div class="free"></div>
-                <div class="free"></div>
+            <div class="seat-row"> <!-- 25–28 -->
+                <div class="free">25</div>
+                <div class="free">26</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
-            </div>
-            <div class="seat-row"> <!-- 27–28 -->
-                <div class="free"></div>
-                <div class="free"></div>
-                <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">27</div>
+                <div class="free">28</div>
             </div>
             <div class="seat-row"> <!-- 29–32 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">29</div>
+                <div class="free">30</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">31</div>
+                <div class="free">32</div>
             </div>
             <div class="seat-row"> <!-- 33–36 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">33</div>
+                <div class="free">34</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">35</div>
+                <div class="free">36</div>
             </div>
             <div class="seat-row"> <!-- 37–40 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">37</div>
+                <div class="free">38</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">39</div>
+                <div class="free">40</div>
             </div>
             <div class="seat-row"> <!-- 41–44 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">41</div>
+                <div class="free">42</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">43</div>
+                <div class="free">44</div>
             </div>
             <div class="seat-row"> <!-- 45–48 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">45</div>
+                <div class="free">46</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">47</div>
+                <div class="free">48</div>
             </div>
             <div class="seat-row"> <!-- 49–52 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">49</div>
+                <div class="free">50</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">51</div>
+                <div class="free">52</div>
             </div>
             <div class="seat-row"> <!-- 53–56 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">53</div>
+                <div class="free">54</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">55</div>
+                <div class="free">56</div>
             </div>
         </div>
     </div>
 
     <div id="seats-from" class="container">
         <h1>Выберите место для поездки обратно</h1>
-        <div id="info-from">dfhg</div>
+        <div id="info-from"></div>
         <div class="bus">
             <div class="seat-row"> <!-- 3,4 -->
                 <div class="blank"></div>
                 <div class="blank"></div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">3</div>
+                <div class="free">4</div>
             </div>
             <div class="seat-row"> <!-- 5–8 -->
-                <div class="occupied"></div>
-                <div class="free"></div>
+                <div class="occupied">5</div>
+                <div class="free">6</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="occupied"></div>
+                <div class="free">7</div>
+                <div class="occupied">8</div>
             </div>
             <div class="seat-row"> <!-- 9–12 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">9</div>
+                <div class="free">10</div>
                 <div class="blank"></div>
-                <div class="occupied"></div>
-                <div class="free"></div>
+                <div class="occupied">11</div>
+                <div class="free">12</div>
             </div>
             <div class="seat-row"> <!-- 13–16 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">13</div>
+                <div class="free">14</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">15</div>
+                <div class="free">16</div>
             </div>
             <div class="seat-row"> <!-- 17–20 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">17</div>
+                <div class="free">18</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">19</div>
+                <div class="free">20</div>
             </div>
             <div class="seat-row"> <!-- 21–24 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">21</div>
+                <div class="free">22</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">23</div>
+                <div class="free">24</div>
             </div>
-            <div class="seat-row"> <!-- 25–26 -->
-                <div class="free"></div>
-                <div class="free"></div>
+            <div class="seat-row"> <!-- 25–28 -->
+                <div class="free">25</div>
+                <div class="free">26</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
-            </div>
-            <div class="seat-row"> <!-- 27–28 -->
-                <div class="free"></div>
-                <div class="free"></div>
-                <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">27</div>
+                <div class="free">28</div>
             </div>
             <div class="seat-row"> <!-- 29–32 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">29</div>
+                <div class="free">30</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">31</div>
+                <div class="free">32</div>
             </div>
             <div class="seat-row"> <!-- 33–36 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">33</div>
+                <div class="free">34</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">35</div>
+                <div class="free">36</div>
             </div>
             <div class="seat-row"> <!-- 37–40 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">37</div>
+                <div class="free">38</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">39</div>
+                <div class="free">40</div>
             </div>
             <div class="seat-row"> <!-- 41–44 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">41</div>
+                <div class="free">42</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">43</div>
+                <div class="free">44</div>
             </div>
             <div class="seat-row"> <!-- 45–48 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">45</div>
+                <div class="free">46</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">47</div>
+                <div class="free">48</div>
             </div>
             <div class="seat-row"> <!-- 49–52 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">49</div>
+                <div class="free">50</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">51</div>
+                <div class="free">52</div>
             </div>
             <div class="seat-row"> <!-- 53–56 -->
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">53</div>
+                <div class="free">54</div>
                 <div class="blank"></div>
-                <div class="free"></div>
-                <div class="free"></div>
+                <div class="free">55</div>
+                <div class="free">56</div>
             </div>
         </div>
     </div>

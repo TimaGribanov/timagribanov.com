@@ -56,6 +56,13 @@ h1 {
     padding: 5px;
 }
 
+#trip select {
+    height: 31px;
+    width: 200px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
 #trip span {
     margin-right: 10px;
 }
@@ -104,7 +111,7 @@ h1 {
 #seats-to,
 #seats-from {
     width: 1000px;
-    height: 820px;
+    height: 870px;
 }
 
 #info-to,
@@ -117,20 +124,47 @@ h1 {
     padding: 5px;
     float: right;
     width: 230px;
-    height: 670px;
     display: inline-block;
     margin-right: 50px;
 }
 
-.blank,
+.blank {
+    display: inline-block;
+    margin: 5px;
+    border: 1px solid white;
+    border-radius: 1px;
+    width: 30px;
+    height: 30px;
+}
 .free,
-.occupied {
+.occupied,
+.chosen {
     display: inline-block;
     margin: 5px;
     border: 1px solid black;
     border-radius: 1px;
     width: 30px;
-    height: 30px;
+    height: 25px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.free {
+    background-color: lightgreen;
+    cursor: pointer;
+}
+
+.free:hover {
+    opacity: 0.6;
+}
+
+.occupied {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.chosen {
+    background-color: green;
 }
 
 /**************
