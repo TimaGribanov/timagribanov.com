@@ -6,59 +6,47 @@ function getTripInfo() {
     let people = document.getElementById('people').value;
     let promocode = document.getElementById('promocode').value;
 
-    // let townFrom;
+    let townFrom;
     let townTo;
 
     switch (townFromValue){
-        case '1': {
-            let townFrom = 'Санкт-Петербург';
-            console.log(townFrom);
+        case '1':
+            townFrom = 'Санкт-Петербург';
             break;
-        }
-        case '2': {
-            let townFrom = 'Москва';
-            console.log(townFrom);
+        case '2':
+            townFrom = 'Москва';
             break;
-        }
-        case '3': {
-            let townFrom = 'Великий Новогород';
+        case '3':
+            townFrom = 'Великий Новогород';
             break;
-        }
-        case '4': {
-            let townFrom = 'Псков';
+        case '4':
+            townFrom = 'Псков';
             break;
-        }
     }
 
     switch (townToValue) {
-        case 1:
+        case '1':
             townTo = 'Санкт-Петербург';
-            console.log(townTo);
             break;
-        case 2:
+        case '2':
             townTo = 'Москва';
-            console.log(townTo);
             break;
-        case 3:
+        case '3':
             townTo = 'Великий Новогород';
             break;
-        case 4:
+        case '4':
             townTo = 'Псков';
             break;
     }
 
-
-    let oneWayTripsID = [];
     if (document.getElementById('one-way-trip').checked === true) {
         // Один билет
-
-        alasql.promise('SELECT ID INTO ? FROM CSV("database/routes.csv", {headers:true, separator:";"}) WHERE TOWN_FROM = ? AND TOWN_TO = ?', [oneWayTripsID, townFrom, townTo])
-            .then(function(data) {
-                alert(oneWayTripsID);
-            }).catch(function(error) {
-                console.log(error);
-        });
-
+        townFrom = '%' + townFrom +'%';
+        townTo = '%' + townTo + '%';
+        
+        let oneWayTripsID = [];
+        alasql('SELECT ID INTO ? FROM CSV("database/routes.csv", {headers:true, separator:";"}) WHERE TOWN_FROM = ? AND TOWN_TO = ?', [oneWayTripsID, townFrom, townTo]);
+        alert(oneWayTripsID);
     }
     else {
         // Два билета
