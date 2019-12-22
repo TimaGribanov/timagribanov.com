@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Электронная система продажи автобусных билетов на междугородние маршруты</title>
+    <base href="http://localhost:63342/timagribanov.github.io/digital_tickets/"/>
 
     <link rel="stylesheet" href="style.css"/>
 
     <script src="https://cdn.jsdelivr.net/alasql/latest/alasql.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="find_route.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </head>
 <body onload="loadInfo()">
     <div id="trip-info" class="container">
@@ -24,7 +25,7 @@
                     <input type="text" id="date-from-1" class="trip-date" placeholder="Дата поездки туда" onmousedown="this.type='date';this.style.position = 'relative';"/>
                 </label>
                 <label for="one-way-trip">
-                    <input type="checkbox" id="one-way-trip"/><span>Поездка в одну сторону</span>
+                    <input type="checkbox" id="one-way-trip" onclick="inactivateReturn()"/><span>Поездка в одну сторону</span>
                 </label>
                 <label for="people">
                     <input type="number" id="people" placeholder="Пассажиры" min="1"/>

@@ -12,3 +12,7 @@ function loadInfo() {
         document.getElementById('town-to-1').innerHTML += '<option value="' + j + '">'+ cities[i] + '</option>';
     }
 }
+
+function inactivateReturn() {
+    document.getElementById('date-to-1').disabled = document.getElementById('date-to-1').disabled !== true;
+}
