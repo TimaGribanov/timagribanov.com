@@ -3,6 +3,11 @@
     src: url('Blogger_Sans.otf');
 }
 
+@font-face {
+    font-family: BloggerSansBold;
+    src: url('Blogger_Sans-Bold.otf');
+}
+
 body {
     position: absolute;
     left: 0;
@@ -30,6 +35,17 @@ select {
 }
 
 button {
+    cursor: pointer;
+}
+
+.button {
+    padding: 5px;
+    width: 50px;
+    height: 30px;
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+    background-color: #f1f1f1;
+    color: dimgrey;
     cursor: pointer;
 }
 
@@ -79,6 +95,49 @@ h1 {
 /***************
 * SECOND BLOCK *
 ***************/
+
+.route-block {
+    width: 100%;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.route-block .row {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.route-block .town {
+    font-family: 'BloggerSansBold', sans-serif;
+    font-size: 14pt;
+}
+
+.route-block .time {
+    position: absolute;
+    left: 200px;
+}
+
+.route-block .date {
+    position: absolute;
+    left: 275px;
+}
+
+.route-block .arrow {
+    margin-left: 25px;
+}
+
+.route-block .price {
+    margin-left: 830px;
+}
+
+.route-block .button {
+    margin-left: 25px;
+}
+
+.route-block .route-id {
+    display: none;
+}
 
 /**************
 * THIRD BLOCK *
