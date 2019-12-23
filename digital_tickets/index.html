@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/alasql/latest/alasql.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="find_route.js"></script>
+    <script type="text/javascript" src="pass_info.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </head>
 <body onload="loadInfo()">
@@ -27,9 +28,9 @@
                 <label for="one-way-trip">
                     <input type="checkbox" id="one-way-trip" onclick="inactivateReturn()"/><span>Поездка в одну сторону</span>
                 </label>
-                <label for="people">
+                <!-- label for="people">
                     <input type="number" id="people" placeholder="Пассажиры" min="1"/>
-                </label>
+                </label -->
             </div>
             <div class="row">
                 <label for="town-to-1">
@@ -54,38 +55,38 @@
     </div>
 
     <div id="user-info" class="container">
-        <h1>Введите информацию о пассажирах</h1>
+        <h1>Введите информацию о пассажире</h1>
         <form id="user">
             <div class="row">
                 <label>
-                    <input type="text" placeholder="Карта лояльности"/>
+                    <input type="text" placeholder="Карта лояльности" id="pass-card"/>
                 </label>
             </div>
             <div class="row">
                 <label>
-                    <input type="text" placeholder="Фамилия*"/>
+                    <input type="text" placeholder="Фамилия*" is="pass-surname"/>
                 </label>
                 <label>
-                    <input type="text" placeholder="Имя*"/>
+                    <input type="text" placeholder="Имя*" id="pass-name"/>
                 </label>
                 <label>
-                    <input type="text" placeholder="Отчество"/>
-                </label>
-            </div>
-            <div class="row">
-                <label>
-                    <input type="email" placeholder="Электронная почта*"/>
-                </label>
-                <label>
-                    <input type="tel" placeholder="Телефон*"/>
+                    <input type="text" placeholder="Отчество" id="pass-surname"/>
                 </label>
             </div>
             <div class="row">
                 <label>
-                    <input type="date" placeholder="Дата рождения*"/>
+                    <input type="email" placeholder="Электронная почта*" id="pass-email"/>
                 </label>
                 <label>
-                    <select name="sex">
+                    <input type="tel" placeholder="Телефон*" id="pass-phone"/>
+                </label>
+            </div>
+            <div class="row">
+                <label>
+                    <input type="text" placeholder="Дата рождения*" id="pass-birthdate" onmousedown="this.type='date';this.style.position = 'relative';"/>
+                </label>
+                <label>
+                    <select name="sex" id="pass-sex">
                         <option value="sex">Пол*</option>
                         <option value="male">Мужской</option>
                         <option value="female">Женский</option>
@@ -93,11 +94,16 @@
                 </label>
             </div>
             <div class="row">
-                <label for="nationality">
-                    <input type="text" id="nationality" placeholder="Гражданство или страна, выдавшая документ*"/>
+                <label for="pass-citizenship">
+                    <select name="citizenship" id="pass-citizenship">
+                        <option value="citizenship">Гражданство или страна, выдавшая документ*</option>
+                        <option value="ru">Россия</option>
+                        <option value="by">Беларусь</option>
+                        <option value="ua">Украина</option>
+                    </select>
                 </label>
                 <label>
-                    <select name="doctype">
+                    <select name="doctype" id="pass-doc-type">
                         <option value="doctype">Тип документа*</option>
                         <option value="passport">Паспорт РФ</option>
                         <option value="foreign-ru">Загранпаспорт РФ</option>
@@ -105,11 +111,11 @@
                     </select>
                 </label>
                 <label>
-                    <input type="text" placeholder="Номер документа*"/>
+                    <input type="text" placeholder="Номер документа*" id="pass-doc-num"/>
                 </label>
             </div>
 
-            <button type="submit">Далее</button>
+            <span class="button">Далее</span>
         </form>
     </div>
 
