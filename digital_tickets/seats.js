@@ -1,21 +1,38 @@
 let countForSeats = 1;
 
 function chooseSeat() {
+    document.getElementById('user-info').style.display = 'none';
     document.getElementById('seats-to').style.display = 'block';
-    let freeSeats = document.getElementsByClassName('.free');
-    freeSeats.setAttribute(onclick, chooseThisOne());
+    $('.free').attr('onclick', 'chooseThisOne(this.innerText)');
+    // let freeSeat = document.getElementsByClassName('free');
+    // freeSeat.addEventListener('onclick', 'chooseThisOne', false);
 
-    // Не совсем верно, надо пересмотреть
-    function chooseThisOne() {
-        Namespace.seatNumber = this.innerText;
-        if (document.getElementById('one-way-ticket').checked === true) {
-            document.getElementById('seats-to').style.display = 'none';
-            payForRide();
-        }
-        else {
-            document.getElementById('seats-from').style.display = 'block';
-            Namespace.seatNumberBack = this.innerText;
-            payForRide();
-        }
+    /*let freeSeat = document.querySelectorAll('.categories li');
+    freeSeat.forEach(function(el) {
+        el.addEventListener('click', chooseThisOne, false);
+    })*/
+}
+
+function chooseThisOne(e) {
+    if (countForSeats === 1) {
+        Namespace.seatNumber = e;
+        countForSeats++;
+        checkIfReturn();
+    }
+    else if (countForSeats === 2) {
+        Namespace.seatNumberBack = e;
+        console.log('To: ' + Namespace.seatNumber);
+        console.log('From: ' + Namespace.seatNumberBack);
+        payForRide();
+    }
+}
+
+function checkIfReturn() {
+    if (document.getElementById('one-way-trip').checked === true) {
+        payForRide();
+    }
+    else {
+        document.getElementById('seats-to').style.display = 'none';
+        document.getElementById('seats-from').style.display = 'block';
     }
 }

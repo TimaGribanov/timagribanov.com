@@ -1,3 +1,8 @@
+function showPassInfo() {
+    document.getElementById('route').style.display = 'none';
+    document.getElementById('user-info').style.display = 'block';
+}
+
 function insertPassInfo() {
     /*
     let passCard = document.getElementById('pass-card').value;
@@ -17,8 +22,8 @@ function insertPassInfo() {
     const Passenger = {
         passCard: document.getElementById('pass-card').value,
         passSurname: document.getElementById('pass-surname').value,
-        passName: document.getElementById('passName').value,
-        passSecondName: document.getElementById('pas-second-name').value,
+        passName: document.getElementById('pass-name').value,
+        passSecondName: document.getElementById('pass-second-name').value,
         passEmail: document.getElementById('pass-email').value,
         passPhone: document.getElementById('pass-phone').value,
         passBirthdate: document.getElementById('pass-birthdate').value,

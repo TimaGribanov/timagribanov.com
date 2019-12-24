@@ -9,9 +9,6 @@ function getTripInfo() {
     // let people = document.getElementById('people').value;
     Namespace.promocode = document.getElementById('promocode').value;
 
-    // Namespace.townFrom;
-    // let townTo;
-
     switch (townFromValue) {
         case '1':
             Namespace.townFrom = 'Санкт-Петербург';
@@ -42,10 +39,13 @@ function getTripInfo() {
             break;
     }
 
+    document.getElementById('trip-info').style.display = 'none';
     selectTrips(Namespace.townFrom, Namespace.townTo, Namespace.date);
 }
 
 function selectTrips(townFrom, townTo, date) {
+    document.getElementById('route').style.display = 'block';
+
     let oneWayTrips = [];
     $('#route-block').remove();
     alasql('SELECT * INTO ? FROM CSV("database/routes.csv", {headers:true, separator:";"}) WHERE TOWN_FROM = ? AND TOWN_TO = ? AND DATE_DEP = ?', [oneWayTrips, townFrom, townTo, date], function(data) {
@@ -61,6 +61,7 @@ function selectTrips(townFrom, townTo, date) {
                 '                <span class="arrow">&darr;</span>\n' +
                 '                <span class="price" id="price-' + i + '"> &#8381;</span>\n' +
                 '                <span class="route-id" id="route-id-' + i + '"></span>\n' +
+                '                <span class="route-id" id="route-price-' + i + '"></span>\n' +
                 '                <span class="route-button" onclick="sendTripData(' + i + ')">Выбрать</span>\n' +
                 '            </div>\n' +
                 '            <div class="row">\n' +
@@ -75,6 +76,7 @@ function selectTrips(townFrom, townTo, date) {
             document.getElementById('route-time-to-' + i).innerText = oneWayTrips[i].TIME_ARR;
             document.getElementById('route-date-from-' + i).innerText = oneWayTrips[i].DATE_DEP;
             document.getElementById('route-date-to-' + i).innerText = oneWayTrips[i].DATE_ARR;
+            document.getElementById('route-price-' + i).innerHTML = oneWayTrips[i].PRICE;
             document.getElementById('price-' + i).innerHTML = oneWayTrips[i].PRICE + '&#8381;';
             document.getElementById('route-id-' + i).innerText = oneWayTrips[i].ID;
         }
@@ -87,17 +89,25 @@ function sendTripData(num) {
     if (document.getElementById('one-way-trip').checked === true) {
         let routeForward = document.getElementById('route-id-' + num).innerText;
         console.log(routeForward);
-        insertPassInfo();
+        Namespace.routeForward = routeForward;
+        showPassInfo();
     }
     else {
         if (count === 2) {
             let routeBack = document.getElementById('route-id-' + num).innerText;
+            let priceBack = document.getElementById('route-price-' + num).innerText;
             console.log(routeBack);
-            insertPassInfo();
+            console.log('Back: ' + priceBack);
+            Namespace.priceBack = priceBack;
+            showPassInfo();
         }
         else if (count === 1) {
             let routeForward = document.getElementById('route-id-' + num).innerText;
+            let priceForward = document.getElementById('route-price-' + num).innerText;
             console.log(routeForward);
+            console.log('To: ' + priceForward);
+
+            Namespace.priceForward = priceForward;
             selectTrips(Namespace.townTo, Namespace.townFrom, Namespace.dateBack);
         }
     }

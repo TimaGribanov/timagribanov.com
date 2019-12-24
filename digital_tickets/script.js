@@ -1,4 +1,5 @@
 function loadInfo() {
+
     let cities = [
         'Санкт-Петербург',
         'Москва',

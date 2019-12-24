@@ -11,6 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="find_route.js"></script>
     <script type="text/javascript" src="pass_info.js"></script>
+    <script type="text/javascript" src="seats.js"></script>
+    <script type="text/javascript" src="payments.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </head>
 <body onload="loadInfo()">
@@ -64,13 +66,13 @@
             </div>
             <div class="row">
                 <label>
-                    <input type="text" placeholder="Фамилия*" is="pass-surname"/>
+                    <input type="text" placeholder="Фамилия*" id="pass-surname"/>
                 </label>
                 <label>
                     <input type="text" placeholder="Имя*" id="pass-name"/>
                 </label>
                 <label>
-                    <input type="text" placeholder="Отчество" id="pass-surname"/>
+                    <input type="text" placeholder="Отчество" id="pass-second-name"/>
                 </label>
             </div>
             <div class="row">
@@ -115,7 +117,7 @@
                 </label>
             </div>
 
-            <span class="button">Далее</span>
+            <span class="button" onclick="insertPassInfo()">Далее</span>
         </form>
     </div>
 
@@ -331,20 +333,20 @@
 
     <div id="payments" class="container">
         <h1>Выберите метод оплаты</h1>
-        <div id="bank">
+        <div id="bank" onclick="payByBank()">
             <span>Онлайн картой</span><br/>
             <img src="img/mastercard.png" alt="MasterCard">
             <img id="visa" src="img/visa.png" alt="Visa"/>
         </div>
-        <div id="mobile">
+        <div id="mobile" onclick="payByMobile()">
             <span>Телефон</span><br/>
             <img id="mts" src="img/mts.png" alt="МТС"/>
             <img id="megafon" src="img/megafon.png" alt="МегаФон"/>
         </div>
-        <div id="internet">
+        <div id="internet" onclick="payByInternet()">
             <span>Электронный кошелёк</span><br/>
-            <img id="yam" src="img/yamoney.svg" alt="Яндекс.Деньги"/>
-            <img id="payp" src="img/paypal.png" alt="PayPal"/>
+            <img class="yam" src="img/yamoney.svg" alt="Яндекс.Деньги"/>
+            <img class="payp" src="img/paypal.png" alt="PayPal"/>
         </div>
     </div>
 
@@ -367,7 +369,7 @@
                     <input type="text" placeholder="Владелец карты"/>
                 </label>
             </div>
-            <button type="submit">Оплатить</button>
+            <span class="button">Оплатить</span>
         </form>
     </div>
 
@@ -379,7 +381,7 @@
                     <input type="text" placeholder="Номер телефона"/>
                 </label>
             </div>
-            <button type="submit">Оплатить</button>
+            <span class="button">Оплатить</span>
         </form>
     </div>
 
@@ -391,19 +393,28 @@
                     <input type="text" placeholder="Код подтверждения"/>
                 </label>
             </div>
-            <button type="submit">Подтвердить</button>
+            <span class="button">Подтвердить</span>
         </form>
     </div>
 
     <div id="payments-internet" class="container">
-        <h1>Подтвердите оплату</h1>
+        <h1>Оплатить через интернет</h1>
         <form id="internet-pay">
             <div class="row">
-                <label>
-                    <input type="text" placeholder="Код подтверждения"/>
-                </label>
+                <div class="payment-system">
+                    <img class="yam" src="img/yamoney.svg" alt="Яндекс.Деньги"/><br/>
+                    <label>
+                        <input type="text" placeholder="Номер кошелька"/>
+                    </label>
+                </div>
+                <div class="payment-system">
+                    <img class="payp" src="img/paypal.png" alt="PayPal"/><br/>
+                    <label>
+                        <input type="text" placeholder="Адрес электронной почты"/>
+                    </label>
+                </div>
             </div>
-            <button type="submit">Подтвердить</button>
+            <span class="button">Оплатить</span>
         </form>
     </div>
 </body>

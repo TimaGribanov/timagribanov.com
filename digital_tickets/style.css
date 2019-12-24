@@ -58,6 +58,18 @@ h1 {
     opacity: 1;
 }
 
+#route,
+#user-info,
+#seats-to,
+#seats-from,
+#payments,
+#payments-bank,
+#payments-mobile-1,
+#payments-mobile-2,
+#payments-internet {
+    display: none;
+}
+
 /**************
 * FIRST BLOCK *
 **************/
@@ -279,14 +291,14 @@ h1 {
     bottom: 2px;
 }
 
-#payments #yam {
+#payments .yam {
     margin-top: 15px;
     position: relative;
     height: 35px;
     bottom: 9px;
 }
 
-#payments #payp {
+#payments .payp {
     position: relative;
     height: 30px;
     bottom: 10px;
@@ -311,4 +323,25 @@ h1 {
 #payments-mobile-2 .row,
 #payments-internet .row {
     margin-bottom: 10px;
+}
+
+#internet-pay {
+    text-align: center;
+}
+
+#internet-pay .yam {
+    margin-top: 15px;
+    position: relative;
+    height: 35px;
+    bottom: 9px;
+}
+
+#internet-pay .payp {
+    position: relative;
+    height: 30px;
+    bottom: 10px;
+}
+
+#internet-pay .payment-system {
+    display: inline-block;
 }
