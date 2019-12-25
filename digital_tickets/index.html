@@ -13,6 +13,7 @@
     <script type="text/javascript" src="pass_info.js"></script>
     <script type="text/javascript" src="seats.js"></script>
     <script type="text/javascript" src="payments.js"></script>
+    <script type="text/javascript" src="facade.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </head>
 <body onload="loadInfo()">
@@ -47,7 +48,7 @@
                     <input type="text" id="promocode" placeholder="Промокод"/>
                 </label>
             </div>
-            <span class="button" onclick="getTripInfo()">Найти</span>
+            <span class="button" onclick="system.getTripInfoFacade()">Найти</span>
         </form>
     </div>
 
@@ -117,7 +118,7 @@
                 </label>
             </div>
 
-            <span class="button" onclick="insertPassInfo()">Далее</span>
+            <span class="button" onclick="system.insertPassInfoFacade()">Далее</span>
         </form>
     </div>
 
@@ -332,21 +333,23 @@
     </div>
 
     <div id="payments" class="container">
+        <h1>К оплате:</h1>
+        <div id="bill"></div>
         <h1>Выберите метод оплаты</h1>
-        <div id="bank" onclick="payByBank()">
+        <div id="bank" onclick="system.openBankFacade()">
             <span>Онлайн картой</span><br/>
             <img src="img/mastercard.png" alt="MasterCard">
             <img id="visa" src="img/visa.png" alt="Visa"/>
         </div>
-        <div id="mobile" onclick="payByMobile()">
+        <div id="mobile" onclick="system.openMobileFacade()">
             <span>Телефон</span><br/>
             <img id="mts" src="img/mts.png" alt="МТС"/>
             <img id="megafon" src="img/megafon.png" alt="МегаФон"/>
         </div>
-        <div id="internet" onclick="payByInternet()">
+        <div id="internet" onclick="system.openYandexFacade()">
             <span>Электронный кошелёк</span><br/>
             <img class="yam" src="img/yamoney.svg" alt="Яндекс.Деньги"/>
-            <img class="payp" src="img/paypal.png" alt="PayPal"/>
+            <!-- img class="payp" src="img/paypal.png" alt="PayPal"/ -->
         </div>
     </div>
 
@@ -355,21 +358,22 @@
         <form id="bank-pay">
             <div class="row">
                 <label>
-                    <input type="text" placeholder="Номер карты"/>
+                    <input type="text" id="card-number" placeholder="Номер карты"/>
                 </label>
                 <label>
-                    <input type="text" placeholder="Срок действия"/>
+                    <input type="text" id="card-date" placeholder="Срок действия"/>
                 </label>
                 <label>
-                    <input type="text" placeholder="CVV/CVC"/>
+                    <input type="text" id="card-code" placeholder="CVV/CVC"/>
                 </label>
             </div>
             <div class="row">
                 <label>
-                    <input type="text" placeholder="Владелец карты"/>
+                    <input type="text" id="card-user" placeholder="Владелец карты"/>
                 </label>
             </div>
-            <span class="button">Оплатить</span>
+            <!-- span class="button" onclick="payByBank()">Оплатить</span -->
+            <span class="button" onclick="system.payByBankFacade()">Оплатить</span>
         </form>
     </div>
 
@@ -378,14 +382,15 @@
         <form id="mobile-pay-1">
             <div class="row">
                 <label>
-                    <input type="text" placeholder="Номер телефона"/>
+                    <input type="text" id="phone-number" placeholder="Номер телефона"/>
                 </label>
             </div>
-            <span class="button">Оплатить</span>
+            <!-- span class="button" onclick="payByMobile()">Оплатить</span -->
+            <span class="button" onclick="system.payByMobileFacade()">Оплатить</span>
         </form>
     </div>
 
-    <div id="payments-mobile-2" class="container">
+    <!-- div id="payments-mobile-2" class="container">
         <h1>Подтвердите оплату</h1>
         <form id="mobile-pay-2">
             <div class="row">
@@ -395,7 +400,7 @@
             </div>
             <span class="button">Подтвердить</span>
         </form>
-    </div>
+    </div -->
 
     <div id="payments-internet" class="container">
         <h1>Оплатить через интернет</h1>
@@ -404,18 +409,23 @@
                 <div class="payment-system">
                     <img class="yam" src="img/yamoney.svg" alt="Яндекс.Деньги"/><br/>
                     <label>
-                        <input type="text" placeholder="Номер кошелька"/>
+                        <input type="text" id="yandex-number" placeholder="Номер кошелька"/>
                     </label>
                 </div>
-                <div class="payment-system">
+                <!-- div class="payment-system">
                     <img class="payp" src="img/paypal.png" alt="PayPal"/><br/>
                     <label>
-                        <input type="text" placeholder="Адрес электронной почты"/>
+                        <input type="text" id="paypal-email" placeholder="Адрес электронной почты"/>
                     </label>
-                </div>
+                </div -->
             </div>
-            <span class="button">Оплатить</span>
+            <!-- span class="button" onclick="payByYandex()">Оплатить</span -->
+            <span class="button" onclick="system.payByYandexFacade()">Оплатить</span>
         </form>
+    </div>
+
+    <div id="result" class="container">
+
     </div>
 </body>
 </html>

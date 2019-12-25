@@ -3,14 +3,13 @@ let countForSeats = 1;
 function chooseSeat() {
     document.getElementById('user-info').style.display = 'none';
     document.getElementById('seats-to').style.display = 'block';
-    $('.free').attr('onclick', 'chooseThisOne(this.innerText)');
-    // let freeSeat = document.getElementsByClassName('free');
-    // freeSeat.addEventListener('onclick', 'chooseThisOne', false);
 
-    /*let freeSeat = document.querySelectorAll('.categories li');
-    freeSeat.forEach(function(el) {
-        el.addEventListener('click', chooseThisOne, false);
-    })*/
+    document.getElementById('info-to').innerHTML = '<p class="info-towns">' + Namespace.townFrom + ' > ' + Namespace.townTo + '</p>\n' +
+        '            <p class="info-date-time">' + Namespace.date + ' ' + Namespace.timeForward + '</p>\n' +
+        '            <p class="info-price">' + Namespace.priceForward + '</p>\n' +
+        '            <p class="info-name">' + Namespace.pass.passSurname + ' ' + Namespace.pass.passName + ' ' + Namespace.pass.passSecondName + '</p>';
+
+    $('.free').attr('onclick', 'chooseThisOne(this.innerText)');
 }
 
 function chooseThisOne(e) {
@@ -34,5 +33,10 @@ function checkIfReturn() {
     else {
         document.getElementById('seats-to').style.display = 'none';
         document.getElementById('seats-from').style.display = 'block';
+
+        document.getElementById('info-from').innerHTML = '<p class="info-towns">' + Namespace.townTo + ' > ' + Namespace.townFrom + '</p>\n' +
+            '            <p class="info-date-time">' + Namespace.dateBack + ' ' + Namespace.timeBack + '</p>\n' +
+            '            <p class="info-price">' + Namespace.priceBack + '</p>\n' +
+            '            <p class="info-name">' + Namespace.pass.passSurname + ' ' + Namespace.pass.passName + ' ' + Namespace.pass.passSecondName + '</p>';
     }
 }

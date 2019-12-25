@@ -66,7 +66,8 @@ h1 {
 #payments-bank,
 #payments-mobile-1,
 #payments-mobile-2,
-#payments-internet {
+#payments-internet,
+#result {
     display: none;
 }
 
@@ -95,7 +96,7 @@ h1 {
     margin-right: 10px;
 }
 
-#trip #checkbox {
+#trip #one-way-trip {
     position: relative;
     top: 5px;
 }
@@ -264,10 +265,20 @@ h1 {
 
 #payments div {
     cursor: pointer;
+    display: inline-block;
+    text-align: center;
 }
 
 #payments div:hover {
     opacity: 0.8;
+}
+
+#payments #bill {
+    cursor: auto;
+}
+
+#payments #bill:hover {
+    opacity: 1;
 }
 
 #payments img {
@@ -302,11 +313,6 @@ h1 {
     position: relative;
     height: 30px;
     bottom: 10px;
-}
-
-#payments div {
-    display: inline-block;
-    text-align: center;
 }
 
 #payments-bank input,
@@ -344,4 +350,9 @@ h1 {
 
 #internet-pay .payment-system {
     display: inline-block;
+}
+
+#ticket {
+    border: 1px solid black;
+    padding: 10px;
 }

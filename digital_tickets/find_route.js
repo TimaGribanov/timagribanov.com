@@ -62,7 +62,7 @@ function selectTrips(townFrom, townTo, date) {
                 '                <span class="price" id="price-' + i + '"> &#8381;</span>\n' +
                 '                <span class="route-id" id="route-id-' + i + '"></span>\n' +
                 '                <span class="route-id" id="route-price-' + i + '"></span>\n' +
-                '                <span class="route-button" onclick="sendTripData(' + i + ')">Выбрать</span>\n' +
+                '                <span class="route-button" onclick="system.sendTripDataFacade(' + i + ')">Выбрать</span>\n' +
                 '            </div>\n' +
                 '            <div class="row">\n' +
                 '                <span class="town" id="route-town-to-' + i + '"></span>\n' +
@@ -88,26 +88,21 @@ function selectTrips(townFrom, townTo, date) {
 function sendTripData(num) {
     if (document.getElementById('one-way-trip').checked === true) {
         let routeForward = document.getElementById('route-id-' + num).innerText;
-        console.log(routeForward);
-        Namespace.routeForward = routeForward;
+        Namespace.priceForward = document.getElementById('route-price-' + num).innerText;
+        Namespace.timeForward = document.getElementById('route-time-from-' + num).innerText;
         showPassInfo();
     }
     else {
         if (count === 2) {
             let routeBack = document.getElementById('route-id-' + num).innerText;
-            let priceBack = document.getElementById('route-price-' + num).innerText;
-            console.log(routeBack);
-            console.log('Back: ' + priceBack);
-            Namespace.priceBack = priceBack;
+            Namespace.priceBack = document.getElementById('route-price-' + num).innerText;
+            Namespace.timeBack = document.getElementById('route-time-from-' + num).innerText;
             showPassInfo();
         }
         else if (count === 1) {
             let routeForward = document.getElementById('route-id-' + num).innerText;
-            let priceForward = document.getElementById('route-price-' + num).innerText;
-            console.log(routeForward);
-            console.log('To: ' + priceForward);
-
-            Namespace.priceForward = priceForward;
+            Namespace.priceForward = document.getElementById('route-price-' + num).innerText;
+            Namespace.timeForward = document.getElementById('route-time-from-' + num).innerText;
             selectTrips(Namespace.townTo, Namespace.townFrom, Namespace.dateBack);
         }
     }
