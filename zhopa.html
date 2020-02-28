@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Жопословицы и жопоговорки</title>
+
+    <script type="text/javascript" src="zhopa_script.js"></script>
+
+    <style type="text/css">
+        @font-face {
+            font-family: BloggerSans;
+            src: url('Blogger_Sans.otf');
+        }
+
+        body {
+            font-family: 'BloggerSans', sans-serif;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        button {
+            font-family: 'BloggerSans', sans-serif;
+            font-size: 14pt;
+
+            height: 100px;
+            width: 200px;
+        }
+
+        p {
+            font-size: 20pt;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="generate()">Нажми, чтобы получить жопословицу</button>
+    <p id="output"></p>
+</body>
+</html>
