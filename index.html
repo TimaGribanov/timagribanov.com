@@ -1,31 +1,16 @@
-<!DOCTYPE html> 
-<html lang="ru">
-	<head>
-		<title>Выберите язык</title>
-		<meta charset="utf-8"/>
-		<!-- base href="http://localhost:63342/timagribanov.github.io/"/ -->
-		<base href="https://timagribanov.github.io/"/>
-		<link rel="stylesheet" type="text/css" href="theme.css"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>redirect</title>
+    <meta charset="utf-8"/>
+    <base href="https://timagribanov.github.io/"/>
+    <link rel="stylesheet" type="text/css" href="theme.css"/>
 
-		<script type="text/javascript">
-			function changeText() {
-				var text = document.getElementById("text_index").innerHTML;
-				if (text === "выберите язык") {
-					document.getElementById("text_index").innerHTML = "choose language";
-				}
-				if (text === "choose language") {
-					document.getElementById("text_index").innerHTML = "выберите язык";
-				}
-			}
-		</script>
-	</head>
-	<body>
-		<div id="container">
-			<div id="text_index" onClick="changeText()"><span>выберите язык</span></div>
-			<div id="lang_index">
-				<a href="ru/index.html">русский</a><br/>
-				<a href="en/index.html">english</a>
-			</div>
-		</div>
-	</body>
+    <script type="text/javascript">
+		window.location.replace('/en/');
+    </script>
+</head>
+<body>
+
+</body>
 </html>

@@ -14,68 +14,16 @@
 body {
     width: 1000px;
     margin: auto;
-    font-family: BloggerSans;
+    font-family: BloggerSans, sans-serif;
     text-decoration-color: black;
 }
-
-/*
-    BLOCK FOR INDEX PAGE
-*/
-
-#container {
-    width: 300px;
-    height: 300px;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
-
-#text_index {
-    width: 300px;
-    text-align-last: center;
-    font-size: 20pt;
-    font-family: BloggerSansBold;
-}
-
-#text_index > span {
-    cursor: pointer;
-}
-
-#lang_index {
-    width: 100px;
-    background-color: rgba(180, 180, 180, 0.5);
-    text-align-last: center;
-    padding: 100px 100px;
-}
-
-#lang_index a {
-    font-size: 20pt;
-    text-decoration-line: none;
-    color: white;
-}
-
-#lang_index a:visited {
-    color: white;
-}
-
-#lang_index a:hover {
-    text-decoration-line: underline;
-    color: black;
-}
-
-/*
-    BLOCK FOR INDEX PAGES IN DIFFERENT LANGUAGES
-*/
 
 #header {
     margin: 20px 0 0 0;
 }
 
 #main-link {
-    font-family: BloggerSansBold;
+    font-family: BloggerSansBold, sans-serif;
     display: inline-block;
     font-size: 50pt;
 }
@@ -147,6 +95,38 @@ body {
     transform: scaleY(1);
 }
 
+.arrow {
+    height: 5px;
+    width: 10px;
+}
+
+#github-logo {
+    height: 30px;
+    width: 30px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+#linkedin-logo {
+    height: 30px;
+    width: 36px;
+    margin-left: 5px;
+    margin-right: 3px;
+}
+
+#twitter-logo {
+    height: 30px;
+    width: 30px;
+    margin-left: 3px;
+    margin-right: 5px;
+}
+
+#facebook-logo {
+    height: 30px;
+    width: 30px;
+    margin-left: 5px;
+}
+
 #main {
     display: inline-block;
     margin-top: 10px;
@@ -156,7 +136,7 @@ body {
     display: inline-block;
     width: 290px;
     margin-right: 10px;
-    font-family: BloggerSansBold;
+    font-family: BloggerSansBold, sans-serif;
     font-size: 15pt;
 }
 
@@ -177,6 +157,7 @@ body {
 #main-block {
     display: inline-block;
     float: right;
+    min-height: 82vh;
     width: 690px;
     margin-left: 10px;
 }

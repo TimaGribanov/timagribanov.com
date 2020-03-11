@@ -1,57 +1,59 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ru">
-	<head>
-		<title>Главная страница</title>
-		<meta charset="utf-8"/>
-		<!-- base href="http://localhost:63343/timagribanov.github.io/"/ -->
-		<base href="https://timagribanov.github.io/"/>
-		<link href="theme.css" rel="stylesheet" type="text/css"/>
+<head>
+    <title>Тима Грибанов</title>
+    <meta charset="utf-8"/>
+    <base href="http://localhost:63342/timagribanov.github.io/index.html"/>
+    <!--base href="https://timagribanov.github.io/"/-->
 
-		<script type="text/javascript">
-			function showLangs() {
-				let langsHidden = document.getElementById('langs-hidden');
+    <link rel="stylesheet" type="text/css" href="theme.css"/>
 
-				if (langsHidden.style.display === 'none') {
-					langsHidden.style.display = 'inline';
-				}
-				else {
-					langsHidden.style.display = 'none';
-				}
-			}
-		</script>
-	</head>
-	<body>
-        <div id="header">
-            <a id="main-link" href="index.html">tima gribanov</a>
-            <div id="right_side">
-				<div id="langs">
-					<a href="" hreflang="ru">русский</a><img class="arrow" src="img/arrow.png" alt="arrow" onclick="showLangs()"/><br/>
-					<div id="langs-hidden">
-						<a href="/en/index.html" hreflang="en">english</a>
-					</div>
-				</div>
-				<div id="social-block">
-					<a href="https://github.com/TimaGribanov"><img src="img/github.png" class="not-linkedin" alt="GitHub"/></a>
-					<a href="https://www.linkedin.com/in/timagribanov/"><img src="img/linkedin.png" id="linkedin" alt="LinkedIn"/></a>
-					<a href="https://twitter.com/gribanovtima"><img src="img/twitter.png" class="not-linkedin" alt="Twitter"/></a>
-					<a href="https://www.facebook.com/tima.gribanov"><img src="img/facebook.png" id="facebook" class="not-linkedin" alt="Facebook"/></a>
-				</div>
-            </div>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+<div id="header">
+    <a id="main-link" href="index.html">tima gribanov</a>
+    <div id="right_side">
+        <ul class="topmenu">
+            <li>
+                <a class="topmenu-link" href="" hreflang="ru">русский <img class="arrow" src="img/arrow.png"
+                                                                           alt="arrow"/></a>
+                <ul class="submenu">
+                    <li><a href="en/index.html" hreflang="en">english</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div id="social-block">
+            <a href="https://github.com/TimaGribanov"><img src="img/github.png" id="github-logo" alt="GitHub"/></a>
+            <a href="https://www.linkedin.com/in/timagribanov/"><img src="img/linkedin.png" id="linkedin-logo"
+                                                                     alt="LinkedIn"/></a>
+            <a href="https://twitter.com/gribanovtima"><img src="img/twitter.png" id="twitter-logo" alt="Twitter"/></a>
+            <a href="https://www.facebook.com/tima.gribanov"><img src="img/facebook.png" id="facebook-logo"
+                                                                  alt="Facebook"/></a>
         </div>
-		<div id="main">
-			<div id="menu">
-				<p><a href="hiztegia/hiztegia_ru.html">баскский словарь</a></p>
-				<p><a href="https://vk.com/akfgfragments_ru">akfgfragments VK</a></p>
-				<p><a href="ru/songs_trans.html">переводы песен</a></p>
-				<p><a href="ru/about.html">обо мне</a></p>
-			</div>
-			<div id="main-block">
-				
-			</div>
-		</div>
-		<div id="footer">
-			<p>Тимофей Грибанов © 2019</p>
-			<p>e-mail: <a href="mailto:t.gribanow@gmail.com">t.gribanow@gmail.com</a></p>
-		</div>
-	</body>
+    </div>
+</div>
+<div id="main">
+    <div id="menu">
+        <p><a href="ajikan-database/" target="_blank">Asian Kung-Fu Generation Database</a></p>
+        <p><a href="https://vk.com/akfgfragments_ru" target="_blank">akfgfragments VK</a></p>
+		<p><a href="froggs/" target="_blank">Игры про лягушек</a></p>
+    </div>
+    <div id="main-block">
+
+    </div>
+</div>
+<div id="footer">
+    <p>Тимофей Грибанов ©
+        <span>
+			<script type="text/javascript">
+				document.write(new Date().getFullYear());
+			</script>
+		</span>
+    </p>
+    <p>e-mail: <a href="mailto:t.gribanow@gmail.com">t.gribanow@gmail.com</a></p>
+</div>
+</body>
 </html>
