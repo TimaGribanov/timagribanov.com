@@ -157,7 +157,7 @@ body {
 #main-block {
     display: inline-block;
     float: right;
-    min-height: 82vh;
+    min-height: 80vh;
     width: 690px;
     margin-left: 10px;
 }
@@ -172,10 +172,16 @@ body {
     color: black;
 }
 
+#main-block p {
+    text-indent: 1.5cm;
+    position: relative;
+    top: -15px;
+}
+
 #footer {
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 35px;
 }
 
 #footer p {
