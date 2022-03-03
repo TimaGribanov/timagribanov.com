@@ -1,16 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>redirect</title>
-    <meta charset="utf-8"/>
-    <base href="https://timagribanov.github.io/"/>
-    <link rel="stylesheet" type="text/css" href="theme.css"/>
+    <title>Tima Gribanov</title>
+    <meta charset="utf-8" />
+    <!--base href="https://timagribanov.github.io/" /-->
 
-    <script type="text/javascript">
-		window.location.replace('/en/');
-    </script>
+    <link rel="stylesheet" type="text/css" href="theme.css" />
 </head>
-<body>
 
+<body>
+    <div class="content">
+        <header id="header">
+            <div id="main-link">
+                <a href="index.html">tima gribanov</a>
+            </div>
+
+            <div id="right-side">
+                <nav id="lang">
+                    <ul>
+                        <li><span id="lang-en">english</span></li>
+                        <li><span id="lang-ru">русский</span></li>
+                        <li><span id="lang-fi">suomi</span></li>
+                    </ul>
+                </nav>
+
+                <nav id="social-block">
+                    <a href="https://github.com/TimaGribanov"><img src="img/github.png" id="github-logo"
+                            alt="GitHub" /></a>
+                    <a href="https://www.linkedin.com/in/timagribanov/"><img src="img/linkedin.png" id="linkedin-logo"
+                            alt="LinkedIn" /></a>
+                    <a href="https://www.facebook.com/tima.gribanov"><img src="img/facebook.png" id="facebook-logo"
+                            alt="Facebook" /></a>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main">
+            <nav id="menu">
+                <ul>
+                    <li><a href="sms-converter/" target="_blank">SMS Converter</a></li>
+                    <li><a href="https://ajikanproject.com" target="_blank">Ajikan Worldwide Project</a></li>
+                    <li><a href="ajikan-database/" target="_blank">Asian Kung-Fu Generation Database</a></li>
+                    <!-- p><a href="froggs/" target="_blank">"Games" about frogs</a></p -->
+                </ul>
+            </nav>
+
+            <section id="main-block">
+                <div id="english">
+                    <p>
+                        <span id="ageEn"></span> y.o. guy from St Petersburg, Russia resident. In 2019, I have got a
+                        bachelor's
+                        degree in ‘Systems of radio access and radio communications’ at ITMO University. And in 2021, I
+                        have
+                        finished my master's degree in ‘Telecommunications networks and systems' creation and
+                        exploitation’.
+                        Since the end of 2018, I have been working as a technical support and integration engineer in
+                        Protei:
+                        in a ‘Mobile networks’ group till May 2019, in a newly established ‘Billing’ group until the
+                        spring of
+                        2020 when I have returned to ‘Mobile networks’.
+                    </p>
+                    <p>
+                        Apart from my job, I create some small and interesting (at least for me) things using
+                        JavaScript. I'm also interested in linguistics and translations.
+                    </p>
+                </div>
+
+                <div id="russian">
+                    <p>
+                        <span id="ageRu"></span>-летний петербуржец. В 2019 году окончил бакалавриат Университета ИТМО по
+                        специальности «Системы радиосвязи и радиодоступа», в 2021 —
+                        магистратуру того же вуза по специальности «Создание и эксплуатация сетей и систем связи».
+                        C конца 2018 года работаю инженером в отделе технической
+                        поддержки НТЦ Протей: до мая 2019 в группе «Мобильные системы», после — в новоорганизованной
+                        группе «Биллинг», весной 2020 вернулся в «Мобильные системы».
+                    </p>
+                    <p>
+                        Кроме учёбы, пишу небольшие интересные мне вещи на JavaScript. Также интересуюсь
+                        лингвистикой и переводческой деятельностью.
+                    </p>
+                </div>
+
+                <div id="finnish">
+                    <p>
+                        Olen <span id="ageFi"></span> vuotias Pietarilainen. Vuonna 2019 olen suorittanut kandidaatin tutkinnon
+                        "Radiopääsy- ja radioviestintäjärijeskelmät" ITMO-yliopistossa. Ja vuonna 2021 olen suorittanut maisterin
+                        tutkinnon "Tiekoliikenneverkkojen ja -järjestelminen luominen ja hyödyntäminen" ITMO-yliopistossa. Vuoden 
+                        2018 lopusta lähtien olen työskenellyt teknisen tuen ja integraatioinsinöörinä Protei:ssa. Toukokuuhun 2019 
+                        asti "Mobiilijärjestelmät"-ryhmässä, myöhemmin "Billing"-ryhmässä, ja keväästä 2020 alkaen uudelleen
+                        "Mobiilijärjestelmät"-ryhmässä.
+                    </p>
+                    <p>
+                        Työni lisäksi luon pieniä ja mielenkiintoisia (ainakin minulle) asioita JavaScriptin avulla. Olen myös
+                        kiinostunut kielitieteestä ja käänöksistä.
+                    </p>
+                </div>
+            </section>
+
+            <div id="push"></div>
+        </main>
+    </div>
+
+    <footer id="footer">
+        <p id="footer-en">Timofey Gribanov ©
+            <span>
+                <script type="text/javascript">
+                    document.write(new Date().getFullYear());
+                </script>
+            </span>
+        </p>
+        <p id="footer-ru">Тимофей Грибанов ©
+            <span>
+                <script type="text/javascript">
+                    document.write(new Date().getFullYear());
+                </script>
+            </span>
+        </p>
+        <p>e-mail: <a href="mailto:t.gribanow@gmail.com">t.gribanow@gmail.com</a></p>
+    </footer>
+    <script type="text/javascript" src="script.js"></script>
 </body>
+
 </html>
