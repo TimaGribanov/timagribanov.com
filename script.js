@@ -10,9 +10,7 @@ window.onload = function calcAge() {
     } else {
         age = ageY - 1;
     }
-    document.getElementById('ageEn').innerText = age;
-    document.getElementById('ageRu').innerText = age;
-    document.getElementById('ageFi').innerText = age;
+    document.getElementsByClassName('age').innerText = age;
 };
 
 const langEn = document.getElementById('lang-en');
