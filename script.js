@@ -3,12 +3,14 @@ window.onload = function calcAge() {
     let today = new Date();
     let age;
     let ageY = today.getFullYear() - birthday.getFullYear();
-    let ageM = today.getMonth() - birthday.getMonth();
-    let ageD = today.getDate() - birthday.getDate();
-    if(ageM >= 0 && ageD >= 0) {
+    if (today.getMonth() > birthday.getMonth()) {
         age = ageY;
     } else {
-        age = ageY - 1;
+        if (today.getDate() >= birthday.getDate) {
+            age = ageY;
+        } else {
+            age = ageY - 1;
+        }
     }
     document.getElementsByClassName('age').innerText = age;
 };
