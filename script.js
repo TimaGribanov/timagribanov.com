@@ -12,7 +12,10 @@ window.onload = function calcAge() {
             age = ageY - 1;
         }
     }
-    document.getElementsByClassName('age').innerText = age;
+    const ageArr = document.getElementsByClassName('age');
+    for (let i = 0; i < ageArr.length; i++) {
+        ageArr[i].innerText = age;
+    }
 };
 
 const langEn = document.getElementById('lang-en');
