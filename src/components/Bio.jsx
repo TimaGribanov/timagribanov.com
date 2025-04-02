@@ -1,10 +1,13 @@
-import { Trans } from 'react-i18next'
-
-const Bio = () => {
+const Bio = ({dict}) => {
   return (
-    <div>
-      <Trans i18nKey='bio' />
-    </div>
+    <section className="section" id="about-me">
+      <div>
+        <h1>{dict.header}</h1>
+        <p>{dict.p1}</p>
+        <p>{dict.p2}</p>
+        <p>{dict.p3}</p>
+      </div>
+    </section>
   )
 }
 

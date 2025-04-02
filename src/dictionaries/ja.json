@@ -1,0 +1,76 @@
+{
+  "bio": {
+    "header": "私について",
+    "p1": "ブダペストに住んでいるロシアの男です。ITMO大学で習っていた、無線通信を勉強していました。後はテレコンベンダーにインテグレーションエンジニア（テクニカルサポート、テスティングなど）を勤めていました。",
+    "p2": "今、Ericssonにテストオートメーションのエンジニアを勤めています。私はラジオ装置のユニトオートテストを生み出して、編集して、デバッグしています。フレームワークはJava TestNGです。",
+    "p3": "私の他の興味はWebプログラミング（フロントやバック）や言語学や翻訳です。"
+  },
+  "fullName": "ティモフェイ・グリバノフ",
+  "links": "リンク",
+  "cv": "私の履歴書",
+  "projects": {
+    "header": "プロジェクト",
+    "basic": "こちらでは私の個人的なプロジェクトのリストです。大半はASIAN KUNG-FU GENERATIONに関してプロジェクトですね。さあ、このバンドが大好きですから、バンドに関して何かを作ってたいでした。でも、これは良い練習やホビーです。",
+    "sms": {
+      "title": "SMS Converter",
+      "description": "SMSの ボディー をデコードするとエンコードするJSのツールです。 GSM7とUCS2と８ビットからSMSの ボディーをデコードすること助けます。エンコードもします。",
+      "technologies": "HTML、CSS、Bootstrap、JavaScript"
+    },
+    "akfgfragments": {
+      "title": "akfgfragments.com",
+      "url": "https://akfgfragments.com",
+      "github": "https://github.com/TimaGribanov/akfgfragments_theme",
+      "description": "akfgfragments.comというサイトで使う簡単なWordPressのテーマです。",
+      "technologies": "PHP、HTML、CSS、Bootstrap、WordPress"
+    },
+    "links": {
+      "title": "akfgfragments link-tree",
+      "url": "https://links.akfgfragments.com",
+      "github": "https://github.com/TimaGribanov/links.akfgfragments.com",
+      "description": "akfgfragmentsのサイトのリンクツリーです。 クエリなしアクセスさせたら、SNSのリストが見せられます。クエリとアクセスさせたら、記事のいろいろな言語のバージョンが見せられます。",
+      "technologies": "Next.js, Bootstrap, MariaDB"
+    },
+    "solfa20": {
+      "title": "Ajikan Sol-Fa 20",
+      "url": "https://solfa20.akfgfragments.com",
+      "github": "https://github.com/TimaGribanov/solfa20.akfgfragments.com",
+      "description": "ASIAN KUNG-FU GENERATIONの「ソルファ」というアルバムの20周年について小さいワンページサイトです。ユーザーはメッセージを送れます。そして、アドミンはそのメッセージを目検でチェックしてサイトに付け足します。",
+      "technologies": "Next.js, GSAP, Bootstrap, MongoDB"
+    },
+    "ajikanDb": {
+      "title": "Ajikan Database",
+      "url": "https://ajikan-database.timagribanov.com",
+      "github": "https://github.com/TimaGribanov/ajikan-database",
+      "description": "早くアジカンの曲を含む全レコードを検索するから、このサイトを作りました。 このプロジェクトはNodeJS／expressとMariaDBとのバックエンドあって、ReactとCSSとのフロントエンドがあります。",
+      "technologies": "ReactJS、NodeJS、CSS"
+    },
+    "awp": {
+      "title": "Ajikan Worldwide Project",
+      "url": "https://ajikanproject.akfgfragments.com",
+      "github": "https://github.com/TimaGribanov/ajikan-worldwide-project",
+      "description": "アジカンのカバープロジェクトのためにワンページサイトです。",
+      "technologies": "JavaScript、HTML、CSS、Bootstrap"
+    }
+  },
+  "translation": {
+    "link_header": "翻訳",
+    "header": "翻訳とローカリゼーション",
+    "basic": {
+      "p1": "私の別の興味は言語や翻訳です。趣味の翻訳することが大好きです。そして、少数のプロジェクトをローカライズすることに関わりました。",
+      "p2": "私の言語はロシア語（母語）や英語（流暢）やウクライナ語とベラルーシ語（読んでちょっと書いてできるけど喋ることが大変）です。",
+      "p3": "今、日本語（たぶんJLPT N4ぐらい）とハンガリー語（A1）を習いています。"
+    },
+    "localisation": {
+      "akfgfragments": {
+        "title": "akfgfragments.com",
+        "description": "もちろん私のプロジェクト（akfgfragments）のサイトのローカリゼーションに関わりました。ロシア語やウクライナ語やベラルーシ語や日本語でローカライズしていて別のティームメンバーのドイツ語やインドネシア語で翻訳を取り締まりました。",
+        "url": "https://crowdin.com/project/akfgfragments"
+      },
+      "tabby": {
+        "title": "Tabby",
+        "description": "大好きなターミナルアプリのロシア語でローカリゼーションに多数の貢献していました。",
+        "url": "https://crowdin.com/project/tabby"
+      }
+    }
+  }
+}

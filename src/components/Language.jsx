@@ -1,16 +1,22 @@
-import { LANGUAGES } from '../constants/languages'
+'use client'
 
-const Language = ({ handleLangs }) => {
+import {LOCALES} from '@/constants'
+import {useRouter, usePathname} from 'next/navigation'
+
+const Language = () => {
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const handleLangs = event => router.push(`/${event.target.value}`)
+
   return (
-    <div className='col d-flex justify-content-end align-items-center'>
-      <select className='form-select border-dark' onChange={handleLangs}>
-      {LANGUAGES.map(({ code, label }) => (
-          <option key={code} value={code}>
-            {label}
-          </option>
-        ))}
+    <select onChange={handleLangs} defaultValue={pathname.substring(1)}>
+      {LOCALES.map(({code, label}) => (
+        <option key={code} value={code}>
+          {label}
+        </option>
+      ))}
     </select>
-    </div>
   )
 }
 

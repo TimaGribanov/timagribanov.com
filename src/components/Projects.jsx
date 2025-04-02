@@ -1,45 +1,21 @@
-import ProjectContent from './ProjectContent'
-import ProjectsMenuItem from './ProjectsMenuItem'
+import Project from './Project.jsx'
 
-const Projects = ({ handleProjMenuActive, handleProjType, projMenuActive, projType }) => {
+const Projects = ({dict}) => {
   return (
-    <div className='row'>
-      <div id='projMenu' className='col-3'>
-        <nav className='nav flex-column'>
-          <ProjectsMenuItem
-            type='sms'
-            name='SMS Converter'
-            projMenuActive={projMenuActive}
-            handleProjMenuActive={handleProjMenuActive}
-            handleProjType={handleProjType}
-          />
-          <ProjectsMenuItem
-            type='akfgfragments'
-            name='akfgfragments.com'
-            projMenuActive={projMenuActive}
-            handleProjMenuActive={handleProjMenuActive}
-            handleProjType={handleProjType}
-          />
-          <ProjectsMenuItem
-            type='awp'
-            name='Ajikan Worldwide Project'
-            projMenuActive={projMenuActive}
-            handleProjMenuActive={handleProjMenuActive}
-            handleProjType={handleProjType}
-          />
-          <ProjectsMenuItem
-            type='akgDb'
-            name='Ajikan Database'
-            projMenuActive={projMenuActive}
-            handleProjMenuActive={handleProjMenuActive}
-            handleProjType={handleProjType}
-          />
-        </nav>
+    <section className="section projects" id="projects">
+      <div>
+        <h1>{dict.header}</h1>
+        <div><p>{dict.basic}</p></div>
+        <div>
+          <Project key={0} dict={dict.akfgfragments}/>
+          <Project key={1} dict={dict.links}/>
+          <Project key={2} dict={dict.solfa20}/>
+          <Project key={3} dict={dict.ajikanDb}/>
+          <Project key={4} dict={dict.sms}/>
+          <Project key={5} dict={dict.awp}/>
+        </div>
       </div>
-      <div id='projContent' className='col'>
-        <ProjectContent type={projType} />
-      </div>
-    </div>
+    </section>
   )
 }
 

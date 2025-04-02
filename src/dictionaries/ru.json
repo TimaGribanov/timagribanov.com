@@ -1,0 +1,78 @@
+{
+  "bio": {
+    "header": "Обо мне",
+    "p1": "Родился в России, живу в Будапеште. Отучился в Университете ИТМО по специальности «Беспроводные телекоммуникации». Успел поработать в вендоре в качестве инженера техподдрежки, имплементации и много чего другого, что входило в рабочие обязанности. В сферу ответственности группы, в которой я работал, входили решения для ядра мобильной сети.",
+    "p2": "Сейчас работаю автоматическим тестировщиком в Ericsson. Так что пишу, редактирую, гоняю, дебажу, анализирую юнит-тесты радио-оборудования. Тут используется Java + TestNG.",
+    "p3": "Также интересуюсь и занимаюсь веб-разработкой (фронт и бэк), лингвистикой и художественным переводом."
+  },
+  "fullName": "Тимофей Грибанов",
+  "links": "Ссылки",
+  "cv": "Моё резюме",
+  "projects": {
+    "header": "Проекты",
+    "basic": "Список личных проектов, которыми я занимался или занимаюсь. Так вышло, что большинство из них так или иначе связаны с японской группой Asian Kung-Fu Generation. Но что поделать, если я их фанат и веду пару проектов про них. А вообще это отличный способ получить новый опыт.",
+    "sms": {
+      "title": "SMS Converter",
+      "url": "https://timagribanov.com/sms-converter",
+      "github": "https://github.com/TimaGribanov/sms-converter",
+      "description": "Небольшая программа на JS, помогающая декодировать тело смс в текстовый формат. Декодировать можно из GSM7, UCS2 и 8-бит в текст, и обратно.",
+      "technologies": "HTML, CSS, Bootstrap, JavaScript"
+    },
+    "akfgfragments": {
+      "title": "akfgfragments.com",
+      "url": "https://akfgfragments.com",
+      "github": "https://github.com/TimaGribanov/akfgfragments_theme",
+      "description": "Доволно простенькая тема для WordPress-сайта akfgfragments.com, который я администрирую.",
+      "technologies": "PHP, HTML, CSS, Bootstrap, WordPress"
+    },
+    "links": {
+      "title": "akfgfragments link-tree",
+      "url": "https://links.akfgfragments.com",
+      "github": "https://github.com/TimaGribanov/links.akfgfragments.com",
+      "description": "Линктри для akfgfragments. При открытии без дополнительного запроса выдаёт список социальных сетей проекта. Если есть запрос с номером статьи, то выдаётся сама статья с ссылками на разные языки.",
+      "technologies": "Next.js, Bootstrap, MariaDB"
+    },
+    "solfa20": {
+      "title": "Ajikan Sol-Fa 20",
+      "url": "https://solfa20.akfgfragments.com",
+      "github": "https://github.com/TimaGribanov/solfa20.akfgfragments.com",
+      "description": "Одностраничник, посвящённый 20-летию альбома Asian Kung-Fu Generation «Sol-Fa». Даёт возможность отправлять сообщения, которые модерируются вручную перед тем, как попасть на сайт.",
+      "technologies": "Next.js, GSAP, Bootstrap, MongoDB"
+    },
+    "ajikanDb": {
+      "title": "Ajikan Database",
+      "url": "https://ajikan-database.timagribanov.com",
+      "github": "https://github.com/TimaGribanov/ajikan-database",
+      "description": "Маленький проект, позволяющий быстро искать информацию о релизах, на которых выходила та или иная песня Asian Kung-Fu Generation. Бекэнд использует MariaDB и NodeJS/express, фронтэнд — ReactJS и CSS.",
+      "technologies": "ReactJS, NodeJS, CSS"
+    },
+    "awp": {
+      "title": "Ajikan Worldwide Project",
+      "url": "https://ajikanproject.akfgfragments.com",
+      "github": "https://github.com/TimaGribanov/ajikan-worldwide-project",
+      "description": "Одностраничник, посвящённый кавер-проекту по одной уже упоминавшейся здесь группе.",
+      "technologies": "JavaScript, HTML, CSS, Bootstrap"
+    }
+  },
+  "translation": {
+    "link_header": "Переводы",
+    "header": "Перевод и локализация",
+    "basic": {
+      "p1": "Другим моим интересом являются языки и перевод. Я люблю переводить в свободное время, а также я принимал участие в локализации нескольких проектов.",
+      "p2": "Языки, которыми я владею: русский (родной), английский (свободно, C2), украинский и беларусский (средний уровень: читать и писать немного могу, но говорить — проблема).",
+      "p3": "Сейчас изучаю японский (по моим ощущениям, где-то около уровня N4) и венгерский (A1)."
+    },
+    "localisation": {
+      "akfgfragments": {
+        "title": "akfgfragments.com",
+        "description": "Конечно же, я занимался локализацией сайта своего проекта akfgfragments. Я перевёл его на русский, украинский, беларусский и японский, а также модерировал перевод другими людьми на немецкий и индонезийский.",
+        "url": "https://crowdin.com/project/akfgfragments"
+      },
+      "tabby": {
+        "title": "Tabby",
+        "description": "Внёс значительный вклад в локализацию моего любимого терминала Tabby на русский.",
+        "url": "https://crowdin.com/project/tabby"
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "bio": {
+    "header": "About me",
+    "p1": "A Russian guy from Budapest. I studied in ITMO University, where I read Wireless Telecommunication. Later, I worked in a telecommunication vendor as an integration engineer with a rather broad scope of responsibilities.",
+    "p2": "Currently, I'm working as a Test Automation Engineer in Ericsson. So, I mainly create, edit, run, debug, analyse unit tests for the company's radio equipment. Main framework there is Java TestNG.",
+    "p3": "My other interests include web development (front, back, full-stack), linguistics and literary translation."
+  },
+  "fullName": "Timofei Gribanov",
+  "links": "Links",
+  "cv": "My CV",
+  "projects": {
+    "header": "Projects",
+    "basic": "This is the list of some personal or hobby projects I was involved into or made. It turns out that the majority of them is somehow related to the Japanese rock band Asian Kung-Fu Generation. It's just that I'm a fan of theirs so I run a couple of projects about their music. But for me it's a great hobby and an excellent practice to hone my skills.",
+    "sms": {
+      "title": "SMS Converter",
+      "url": "https://timagribanov.com/sms-converter",
+      "github": "https://github.com/TimaGribanov/sms-converter",
+      "description": "A JS-based tool to convert SM bodies to and from human-readable form. It allows to convert SMS bodies from GSM7, UCS2 and 8-bit to text, vice versa.",
+      "technologies": "HTML, CSS, Bootstrap, JavaScript"
+    },
+    "akfgfragments": {
+      "title": "akfgfragments.com",
+      "url": "https://akfgfragments.com",
+      "github": "https://github.com/TimaGribanov/akfgfragments_theme",
+      "description": "A simple theme for a WordPress-based site for akfgfragments.com site I own and administrate.",
+      "technologies": "PHP, HTML, CSS, Bootstrap, WordPress"
+    },
+    "links": {
+      "title": "akfgfragments link-tree",
+      "url": "https://links.akfgfragments.com",
+      "github": "https://github.com/TimaGribanov/links.akfgfragments.com",
+      "description": "A link-tree for the akfgfragments site. If accessed without any query, it shows the list of social networks of the project. If there's a query, the link-tree for an article in different languages will be returned.",
+      "technologies": "Next.js, Bootstrap, MariaDB"
+    },
+    "solfa20": {
+      "title": "Ajikan Sol-Fa 20",
+      "url": "https://solfa20.akfgfragments.com",
+      "github": "https://github.com/TimaGribanov/solfa20.akfgfragments.com",
+      "description": "A little one-page site dedicated to the 20th anniversary of Asian Kung-Fu Generation's album titled ‘Sol-Fa’. It also allows the viewers to send their messages which later manually reviewed in the database before being approved and sent to a another view to be displayed on the page itself.",
+      "technologies": "Next.js, GSAP, Bootstrap, MongoDB"
+    },
+    "ajikanDb": {
+      "title": "Ajikan Database",
+      "url": "https://ajikan-database.timagribanov.com",
+      "github": "https://github.com/TimaGribanov/ajikan-database",
+      "description": "This is a little project that allows anyone to get info about records that a certain song of a band Asian Kung-Fu Generation is on. The project contains of backend (MariaDB database and NodeJS/express server) and frontend (ReactJS, CSS).",
+      "technologies": "ReactJS, NodeJS, CSS"
+    },
+    "awp": {
+      "title": "Ajikan Worldwide Project",
+      "url": "https://ajikanproject.akfgfragments.com",
+      "github": "https://github.com/TimaGribanov/ajikan-worldwide-project",
+      "description": "A one-page site dedicated to the song cover project of one particular music band.",
+      "technologies": "JavaScript, HTML, CSS, Bootstrap"
+    }
+  },
+  "translation": {
+    "link_header": "Translations",
+    "header": "Translation & localisation",
+    "basic": {
+      "p1": "My other interest is languages and translation. I love translating for my leisure and I also took some part in localisation of some projects.",
+      "p2": "My languages: Russian (native), English (fluent), Ukrainian and Belarusian (intermediate, conversational: I can read and write to some extent, speaking is a challenge).",
+      "p3": "I'm currently studying Japanese (currently, nearing JLPT N4 level I suppose) and Hungarian (currently A1)."
+    },
+    "localisation": {
+      "akfgfragments": {
+        "title": "akfgfragments.com",
+        "description": "Of course I took part and managed the localisation of the akfgfragments project's site I run. I localised the site into Russian, Ukrainian, Belarusian and Japanese, while supervising the translation into German and Indonesian by my fellow members of the team.",
+        "url": "https://crowdin.com/project/akfgfragments"
+      },
+      "tabby": {
+        "title": "Tabby",
+        "description": "I've done a major input into localising my favourite terminal app called Tabby into Russian.",
+        "url": "https://crowdin.com/project/tabby"
+      }
+    }
+  }
+}
