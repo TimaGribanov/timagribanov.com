@@ -1,18 +1,22 @@
 import Language from './Language'
-import Socials from './Socials'
+import Link from 'next/link'
 
-const Header = ({ handleLangs }) => {
+const Header = ({dict}) => {
   return (
-    <header className='row d-flex justify-content-between'>
-      <div className='col-8 nameDiv'>
-        <span className='name'>tima gribanov</span>
-      </div>
-      <div className='col'>
-        <div className='row d-flex justify-content-end h-100'>
-          <Socials />
-          <Language handleLangs={handleLangs} />
+    <header className="section">
+      <div>
+        <div className="name-div">
+          <span className="name">tima gribanov</span>
         </div>
+        <nav>
+          <Link href="/#about-me">{dict.bio.header}</Link>
+          <Link href="/#projects">{dict.projects.header}</Link>
+          <Link href="/#translation">{dict.translation.link_header}</Link>
+          <Link href="/#links">{dict.links}</Link>
+          <Language/>
+        </nav>
       </div>
+
     </header>
   )
 }
