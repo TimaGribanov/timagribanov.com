@@ -8,7 +8,7 @@ import Line from '@/components/Line'
 import Translation from '@/components/Translation'
 
 export async function generateStaticParams() {
-  const routes = await fetch('https://timagribanov.com/').then((res) => res.json())
+  const routes = await fetch('https://.../').then((res) => res.json())
 
   return routes.map((route) => ({
     lang: route.lang,
