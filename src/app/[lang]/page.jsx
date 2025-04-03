@@ -11,7 +11,7 @@ import {LOCALES} from '@/constants'
 export async function generateStaticParams() {
   return LOCALES.map((locale) => ({
     lang: locale.code,
-  }))
+  })).push({lang: ''})
 }
 
 export default async function Home({params}) {
