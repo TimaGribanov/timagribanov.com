@@ -1,13 +1,10 @@
+import {LOCALES} from '@/constants.js'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/en',
-        permanent: true,
-      }
-    ]
+  i18n: {
+    locales: LOCALES.map((locale) => locale.code),
+    defaultLocale: 'en',
   },
   distDir: 'build',
 }
