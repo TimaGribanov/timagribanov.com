@@ -11,7 +11,7 @@ import {LOCALES} from '@/constants'
 export async function generateStaticParams() {
   const localesFromFile = LOCALES.map((locale) => ({lang: locale.code}))
 
-  return [{lang: '', ...localesFromFile}]
+  return [{lang: ''} , ...localesFromFile]
 }
 
 export default async function Home({params}) {
