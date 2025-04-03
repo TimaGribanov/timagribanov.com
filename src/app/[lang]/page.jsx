@@ -9,9 +9,9 @@ import Translation from '@/components/Translation'
 import {LOCALES} from '@/constants'
 
 export async function generateStaticParams() {
-  return LOCALES.map((locale) => ({
-    lang: locale.code,
-  }))
+  const localesFromFile = LOCALES.map((locale) => ({lang: locale.code}))
+
+  return [{lang: '', ...localesFromFile}]
 }
 
 export default async function Home({params}) {
@@ -24,10 +24,10 @@ export default async function Home({params}) {
       <main className="main">
         <Bio dict={dict.bio}/>
         <Projects dict={dict.projects}/>
-        <Translation dict={dict.translation} />
+        <Translation dict={dict.translation}/>
         <Links dict={dict}/>
       </main>
-      <Line />
+      <Line/>
     </div>
   )
 }
