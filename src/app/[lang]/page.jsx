@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 
 export default async function Home({params}) {
   const {lang} = await params
-  const dict = await getDictionary(lang)
+  const dict = await getDictionary(lang === '' ? lang : 'en')
 
   return (
     <div className="content">

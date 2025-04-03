@@ -1,10 +1,10 @@
-import { NextResponse } from 'next/server'
-import { LOCALES } from './constants'
+import {NextResponse} from 'next/server'
+import {LOCALES} from './constants'
 
 const locales = LOCALES.map((locale) => locale.code)
 
 export function middleware(request) {
-  const { pathname } = request.nextUrl
+  const {pathname} = request.nextUrl
 
   const pathnameHasLocale = locales.some((locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`)
 
