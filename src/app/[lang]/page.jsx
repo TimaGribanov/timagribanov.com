@@ -6,11 +6,6 @@ import {getDictionary} from './dictionaries'
 import Header from '@/components/Header'
 import Line from '@/components/Line'
 import Translation from '@/components/Translation'
-// import {LOCALES} from '@/constants'
-//
-// export async function generateStaticParams() {
-//   return LOCALES.map((locale) => ({lang: locale.code}))
-// }
 
 export default async function Home({params}) {
   const {lang} = await params

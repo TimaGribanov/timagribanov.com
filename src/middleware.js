@@ -6,6 +6,10 @@ const locales = LOCALES.map((locale) => locale.code)
 export function middleware(request) {
   const {pathname} = request.nextUrl
 
+  const pathnameHasPublic = pathname === '/ajikan_game.html'
+
+  if (pathnameHasPublic) return
+
   const pathnameHasLocale = locales.some((locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`)
 
   if (pathnameHasLocale) return
