@@ -9,10 +9,10 @@ const Header = ({dict}) => {
           <span className="name">tima gribanov</span>
         </div>
         <nav>
-          <Link href="/#about-me">{dict.bio.header}</Link>
-          <Link href="/#projects">{dict.projects.header}</Link>
-          <Link href="/#translation">{dict.translation.link_header}</Link>
-          <Link href="/#links">{dict.links}</Link>
+          <Link href="#about-me">{dict.bio.header}</Link>
+          <Link href="#projects">{dict.projects.header}</Link>
+          <Link href="#translation">{dict.translation.link_header}</Link>
+          <Link href="#links">{dict.links}</Link>
           <Language/>
         </nav>
       </div>

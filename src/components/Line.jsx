@@ -58,7 +58,7 @@ const Line = () => {
   })
 
   return (
-    <div>
+    <div id="line-div">
       <svg
         preserveAspectRatio="xMinyMid meet"
         id="line"

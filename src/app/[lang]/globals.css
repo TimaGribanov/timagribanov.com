@@ -18,9 +18,14 @@ body {
     padding: 0;
 }
 
+#line-div {
+    mix-blend-mode: difference;
+    pointer-events: none;
+}
+
 #path,
 #path2 {
-    stroke: var(--foreground);
+    stroke: var(--background);
 }
 
 #line {
@@ -56,10 +61,6 @@ a {
 h1 {
     text-align: center;
     font-size: 2.5em;
-}
-
-p, a, h1, h2, h3, h4, h5, h6 {
-    mix-blend-mode: difference;
 }
 
 .content {
@@ -139,6 +140,11 @@ nav a:hover {
 @media (prefers-color-scheme: dark) {
     html {
         color-scheme: dark;
+    }
+
+    #path,
+    #path2 {
+        stroke: var(--foreground);
     }
 }
 
