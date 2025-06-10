@@ -6,7 +6,7 @@ const locales = LOCALES.map((locale) => locale.code)
 export function middleware(request) {
   const {pathname} = request.nextUrl
 
-  const pathnameHasPublic = pathname === '/ajikan_game.html'
+  const pathnameHasPublic = pathname === '/ajikan_game.html' || pathname === '/cv' || pathname === '/photo_2.jpg'
 
   if (pathnameHasPublic) return
 

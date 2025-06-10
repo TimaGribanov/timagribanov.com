@@ -1,0 +1,107 @@
+:root {
+    --main-text-colour: #0c090d; /* Black */
+    --support-text-colour: #fffcf2; /* White */
+    --head-bg-colour: #7785ac; /* Blue */
+    --navbar-colour: #696773; /* Grey */
+    --header-colour: #e26d5a; /* Red */
+}
+
+body {
+    max-width: 1000px;
+    margin: auto !important;
+}
+
+/* HEADER */
+
+.container {
+    width: 100%;
+    padding: 0;
+}
+
+#header-desc {
+    background-color: var(--head-bg-colour);
+}
+
+#header-desc-block {
+    color: var(--support-text-colour);
+}
+
+#menu {
+    color: var(--support-text-colour);
+    background-color: var(--navbar-colour);
+}
+
+#menu a {
+    color: var(--support-text-colour);
+    text-decoration: none;
+}
+
+.navbar-nav.navbar-centre {
+    position: relative;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+
+/* MAIN */
+
+main h4 {
+    color: var(--header-colour);
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+main a {
+    color: var(--header-colour);
+}
+
+main a:hover {
+    color: var(--main-text-colour);
+}
+
+#work span,
+#school span,
+#certs span,
+#projects span {
+    /*font-family: LatoItalic, sans-serif;*/
+}
+
+#work p,
+#school p,
+#projects p {
+    padding-left: 10px;
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: var(--header-colour);
+    border: 1px solid var(--main-text-colour);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.beginner {
+    background: radial-gradient(circle at center, var(--header-colour) 0% 10%, transparent 10% 100%);
+}
+
+.dot.elementary {
+    background: radial-gradient(circle at center, var(--header-colour) 0% 25%, transparent 25% 100%);
+}
+
+.dot.intermediate {
+    background: radial-gradient(circle at center, var(--header-colour) 0% 50%, transparent 50% 100%);
+}
+
+.lang.dot {
+    position: relative;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.skill {
+    color: var(--support-text-colour);
+    background-color: var(--header-colour);
+    border-radius: 5px;
+    margin: 3px 3px;
+}
