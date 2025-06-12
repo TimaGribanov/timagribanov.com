@@ -27,19 +27,23 @@ body {
 }
 
 #menu {
-    color: var(--support-text-colour);
     background-color: var(--navbar-colour);
 }
 
 #menu a {
     color: var(--support-text-colour);
-    text-decoration: none;
 }
 
 .navbar-nav.navbar-centre {
     position: relative;
     left: 50%;
     transform: translatex(-50%);
+}
+
+@media print {
+    .nav-item {
+        font-size: smaller;
+    }
 }
 
 
@@ -57,13 +61,6 @@ main a {
 
 main a:hover {
     color: var(--main-text-colour);
-}
-
-#work span,
-#school span,
-#certs span,
-#projects span {
-    /*font-family: LatoItalic, sans-serif;*/
 }
 
 #work p,
@@ -104,4 +101,24 @@ main a:hover {
     background-color: var(--header-colour);
     border-radius: 5px;
     margin: 3px 3px;
+}
+
+#download-btn {
+    position: fixed;
+    z-index: 1;
+    bottom: 5%;
+    left: 5%;
+    cursor: pointer;
+    color: var(--support-text-colour);
+    background-color: var(--head-bg-colour);
+    border: 1px solid var(--head-bg-colour);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+#download-btn:hover {
+    color: var(--head-bg-colour);
+    background-color: var(--support-text-colour);
+    border: 1px solid var(--head-bg-colour);
 }

@@ -44,36 +44,36 @@ const skills = [
 ]
 
 const Skills = () => {
+  let keyIndex = 0
+
   return (
     <div>
-      {skills.map(s => {return <div className="d-inline-block p-1 skill">{s}</div>})}
+      {skills.map(s => {
+        keyIndex++
+        return <div key={keyIndex} className="d-inline-block p-1 skill">{s}</div>
+      })}
     </div>
-
   )
 }
 
-const Main = () => {
-  return (
-    <Container as="main" className="px-4 py-2">
-      <Row>
-        <Col>
-          <Work />
-          <Education />
-        </Col>
-
-        <Col>
-          <Projects />
-          <Certificates />
-          <Languages />
-        </Col>
-      </Row>
-
-      <Row as="section" id="skills">
-        <h4>Skills:</h4>
-        <Skills />
-      </Row>
-    </Container>
-  )
-}
+const Main = () => (
+  <Container as="main" className="px-4 py-2">
+    <Row>
+      <Col>
+        <Work/>
+        <Education/>
+      </Col>
+      <Col>
+        <Projects/>
+        <Certificates/>
+        <Languages/>
+      </Col>
+    </Row>
+    <Row as="section" id="skills">
+      <h4>Skills:</h4>
+      <Skills/>
+    </Row>
+  </Container>
+)
 
 export default Main

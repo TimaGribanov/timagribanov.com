@@ -38,7 +38,7 @@ jobs:
       - name: Build and restart the app on the server
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: cd ${{ secrets.PATH }}; npm i; npm run deploy
+          command: cd ${{ secrets.PATH }}; rm -rf node_nodules; npm i; npm run deploy
           host: ${{ secrets.IP }}
           username: ${{ secrets.USER }}
           privateKey: ${{ secrets.SSH_KEY }}
