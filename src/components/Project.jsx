@@ -1,10 +1,14 @@
-const Project = ({dict}) => {
+import {useTranslations} from 'next-intl'
+
+const Project = ({namespace}) => {
+  const t = useTranslations(`Projects.${namespace}`)
+
   return (
     <div className="project-block">
-      <h2><a href={dict.url}>{dict.title}</a></h2>
-      <p><a href={dict.github} className="github-link">github</a></p>
-      <p>{dict.description}</p>
-      <p><em>{dict.technologies}</em></p>
+      <h2><a href={t('url')}>{t('title')}</a></h2>
+      <p><a href={t('github')} className="github-link">github</a></p>
+      <p>{t('description')}</p>
+      <p><em>{t('technologies')}</em></p>
     </div>
   )
 }

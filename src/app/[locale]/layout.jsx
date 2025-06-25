@@ -1,5 +1,9 @@
 import {Noto_Serif, Shippori_Mincho} from 'next/font/google'
 import './globals.css'
+import {notFound} from "next/navigation";
+import {hasLocale, NextIntlClientProvider} from "next-intl"
+import {routing} from '@/i18n/routing'
+import {setRequestLocale} from "next-intl/server";
 
 const notoSerif = Noto_Serif({
   subsets: ['latin-ext', 'cyrillic-ext'],
@@ -21,12 +25,22 @@ export const metadata = {
   keywords: ['Tima Gribanov', 'web development', 'translations'],
 }
 
-export default async function RootLayout({params, children}) {
-  const {lang} = await params
+export async function generateStaticParams() {
+  return routing.locales.map((locale) => ({locale}))
+}
+
+export default async function LocaleLayout({children, params}) {
+  const {locale} = await params
+  if (!hasLocale(routing.locales, locale)) notFound()
+
+  setRequestLocale(locale)
+
   return (
-    <html lang={lang}>
+    <html lang={locale}>
     <body className={`${notoSerif.className} ${shipporiMincho.className}`}>
-    {children}
+    <NextIntlClientProvider>
+      {children}
+    </NextIntlClientProvider>
     </body>
     </html>
   )

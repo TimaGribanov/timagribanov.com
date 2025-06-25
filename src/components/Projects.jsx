@@ -1,18 +1,20 @@
 import Project from './Project.jsx'
+import {useTranslations} from "next-intl";
 
-const Projects = ({dict}) => {
+const Projects = () => {
+  const t = useTranslations('Projects')
   return (
     <section className="section projects" id="projects">
       <div>
-        <h1>{dict.header}</h1>
-        <div><p>{dict.basic}</p></div>
+        <h1>{t('header')}</h1>
+        <div><p>{t('basic')}</p></div>
         <div>
-          <Project key={0} dict={dict.akfgfragments}/>
-          <Project key={1} dict={dict.links}/>
-          <Project key={2} dict={dict.solfa20}/>
-          <Project key={3} dict={dict.ajikanDb}/>
-          <Project key={4} dict={dict.sms}/>
-          <Project key={5} dict={dict.awp}/>
+          <Project key={0} namespace='akfgfragments'/>
+          <Project key={1} namespace='links'/>
+          <Project key={2} namespace='solfa20'/>
+          <Project key={3} namespace='ajikanDb'/>
+          <Project key={4} namespace='sms'/>
+          <Project key={5} namespace='awp'/>
         </div>
       </div>
     </section>

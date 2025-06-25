@@ -1,14 +1,22 @@
 {
-  "bio": {
+  "Header" : {
+    "bio": "About me",
+    "projects": "Projects",
+    "trans": "Translations",
+    "links": "Links"
+  },
+  "Bio": {
     "header": "About me",
     "p1": "A Russian guy from Budapest. I studied in ITMO University, where I read Wireless Telecommunication. Later, I worked in a telecommunication vendor as an integration engineer with a rather broad scope of responsibilities.",
     "p2": "Currently, I'm working as a Test Automation Engineer in Ericsson. So, I mainly create, edit, run, debug, analyse unit tests for the company's radio equipment. Main framework there is Java TestNG.",
     "p3": "My other interests include web development (front, back, full-stack), linguistics and literary translation."
   },
   "fullName": "Timofei Gribanov",
-  "links": "Links",
-  "cv": "My CV",
-  "projects": {
+  "Links": {
+    "links": "Links",
+    "cv": "My CV"
+  },
+  "Projects": {
     "header": "Projects",
     "basic": "This is the list of some personal or hobby projects I was involved into or made. It turns out that the majority of them is somehow related to the Japanese rock band Asian Kung-Fu Generation. It's just that I'm a fan of theirs so I run a couple of projects about their music. But for me it's a great hobby and an excellent practice to hone my skills.",
     "sms": {
@@ -54,8 +62,7 @@
       "technologies": "JavaScript, HTML, CSS, Bootstrap"
     }
   },
-  "translation": {
-    "link_header": "Translations",
+  "Translation": {
     "header": "Translation & localisation",
     "basic": {
       "p1": "My other interest is languages and translation. I love translating for my leisure and I also took some part in localisation of some projects.",

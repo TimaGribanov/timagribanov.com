@@ -1,7 +1,12 @@
-import Language from './Language'
-import Link from 'next/link'
+'use client'
 
-const Header = ({dict}) => {
+import Language from './Language'
+import {Link} from '@/i18n/navigation'
+import {useTranslations} from 'next-intl'
+
+const Header = () => {
+  const t = useTranslations('Header')
+
   return (
     <header className="section">
       <div>
@@ -9,14 +14,13 @@ const Header = ({dict}) => {
           <span className="name">tima gribanov</span>
         </div>
         <nav>
-          <Link href="#about-me">{dict.bio.header}</Link>
-          <Link href="#projects">{dict.projects.header}</Link>
-          <Link href="#translation">{dict.translation.link_header}</Link>
-          <Link href="#links">{dict.links}</Link>
+          <Link href="#about-me">{t('bio')}</Link>
+          <Link href="#projects">{t('projects')}</Link>
+          <Link href="#translation">{t('trans')}</Link>
+          <Link href="#links">{t('links')}</Link>
           <Language/>
         </nav>
       </div>
-
     </header>
   )
 }

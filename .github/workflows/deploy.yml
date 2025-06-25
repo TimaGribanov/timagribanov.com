@@ -1,44 +1,75 @@
-name: Build & deploy
+name: Deploy to Github Pages
 
-concurrency: production
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 on:
   push:
     branches:
       - main
 
-jobs:
-  copy:
-    name: Copy files
-    runs-on: ubuntu-latest
+  workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: Chekout the repo
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Copy to remote
-        uses: appleboy/scp-action@v0.1.7
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
         with:
-          host: ${{ secrets.IP }}
-          username: ${{ secrets.USER }}
-          key: ${{ secrets.SSH_KEY }}
-          source: .
-          target: ${{ secrets.PATH }}
+          version: 10
+          run_install: false
 
-  build:
-    name: Build the code on the server
-    runs-on: ubuntu-latest
-    needs: copy
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
 
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Setup Pages
+        id: setup_pages
+        uses: actions/configure-pages@v5
+
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            .next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
+
+      - name: Build with Next.js
+        run: pnpm run build
+        env:
+          PAGES_BASE_PATH: ${{ steps.setup_pages.outputs.base_path }}
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build
+
+  deploy:
     environment:
-      name: timagribanov.com
-      url: https://timagribanov.com
-
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
     steps:
-      - name: Build and restart the app on the server
-        uses: garygrossgarten/github-action-ssh@release
-        with:
-          command: cd ${{ secrets.PATH }}; rm -rf node_nodules; npm i; npm run deploy
-          host: ${{ secrets.IP }}
-          username: ${{ secrets.USER }}
-          privateKey: ${{ secrets.SSH_KEY }}
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

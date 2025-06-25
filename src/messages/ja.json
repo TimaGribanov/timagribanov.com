@@ -1,18 +1,28 @@
 {
-  "bio": {
+  "Header": {
+    "bio": "私について",
+    "projects": "プロジェクト",
+    "trans": "翻訳",
+    "links": "リンク"
+  },
+  "Bio": {
     "header": "私について",
     "p1": "ブダペストに住んでいるロシアの男です。ITMO大学で習っていた、無線通信を勉強していました。後はテレコンベンダーにインテグレーションエンジニア（テクニカルサポート、テスティングなど）を勤めていました。",
     "p2": "今、Ericssonにテストオートメーションのエンジニアを勤めています。私はラジオ装置のユニトオートテストを生み出して、編集して、デバッグしています。フレームワークはJava TestNGです。",
     "p3": "私の他の興味はWebプログラミング（フロントやバック）や言語学や翻訳です。"
   },
   "fullName": "ティモフェイ・グリバノフ",
-  "links": "リンク",
-  "cv": "私の履歴書",
-  "projects": {
+  "Links": {
+    "links": "リンク",
+    "cv": "私の履歴書"
+  },
+  "Projects": {
     "header": "プロジェクト",
     "basic": "こちらでは私の個人的なプロジェクトのリストです。大半はASIAN KUNG-FU GENERATIONに関してプロジェクトですね。さあ、このバンドが大好きですから、バンドに関して何かを作ってたいでした。でも、これは良い練習やホビーです。",
     "sms": {
       "title": "SMS Converter",
+      "url": "https://timagribanov.com/sms-converter",
+      "github": "https://github.com/TimaGribanov/sms-converter",
       "description": "SMSの ボディー をデコードするとエンコードするJSのツールです。 GSM7とUCS2と８ビットからSMSの ボディーをデコードすること助けます。エンコードもします。",
       "technologies": "HTML、CSS、Bootstrap、JavaScript"
     },
@@ -52,7 +62,7 @@
       "technologies": "JavaScript、HTML、CSS、Bootstrap"
     }
   },
-  "translation": {
+  "Translation": {
     "link_header": "翻訳",
     "header": "翻訳とローカリゼーション",
     "basic": {

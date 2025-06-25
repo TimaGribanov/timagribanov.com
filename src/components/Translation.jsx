@@ -1,18 +1,21 @@
 import Localisation from '@/components/Localisation'
+import {useTranslations} from 'next-intl'
 
-const Translation = ({dict}) => {
+const Translation = () => {
+  const t = useTranslations('Translation')
+
   return (
     <section className="section translation" id="translation">
       <div>
-        <h1>{dict.header}</h1>
+        <h1>{t('header')}</h1>
         <div>
-          <p>{dict.basic.p1}</p>
-          <p>{dict.basic.p2}</p>
-          <p>{dict.basic.p3}</p>
+          <p>{t('basic.p1')}</p>
+          <p>{t('basic.p2')}</p>
+          <p>{t('basic.p3')}</p>
         </div>
         <div>
-          <Localisation key={0} dict={dict.localisation.akfgfragments} />
-          <Localisation key={1} dict={dict.localisation.tabby} />
+          <Localisation key={0} namespace='akfgfragments' />
+          <Localisation key={1} namespace='tabby' />
         </div>
       </div>
     </section>

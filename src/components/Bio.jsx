@@ -1,11 +1,17 @@
-const Bio = ({dict}) => {
+'use client'
+
+import {useTranslations} from "next-intl";
+
+const Bio = () => {
+  const t = useTranslations('Bio')
+
   return (
     <section className="section" id="about-me">
       <div>
-        <h1>{dict.header}</h1>
-        <p>{dict.p1}</p>
-        <p>{dict.p2}</p>
-        <p>{dict.p3}</p>
+        <h1>{t('header')}</h1>
+        <p>{t('p1')}</p>
+        <p>{t('p2')}</p>
+        <p>{t('p3')}</p>
       </div>
     </section>
   )

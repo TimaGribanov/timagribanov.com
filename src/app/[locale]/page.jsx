@@ -1,24 +1,24 @@
 import Bio from '@/components/Bio'
 import Projects from '@/components/Projects'
 import Links from '@/components/Links'
-
-import {getDictionary} from './dictionaries'
 import Header from '@/components/Header'
 import Line from '@/components/Line'
 import Translation from '@/components/Translation'
+import {use} from 'react'
+import {setRequestLocale} from 'next-intl/server'
 
-export default async function Home({params}) {
-  const {lang} = await params
-  const dict = await getDictionary(lang)
+export default function Home({params}) {
+  const {locale} = use(params)
+  setRequestLocale(locale)
 
   return (
     <div className="content">
-      <Header dict={dict}/>
+      <Header/>
       <main className="main">
-        <Bio dict={dict.bio}/>
-        <Projects dict={dict.projects}/>
-        <Translation dict={dict.translation}/>
-        <Links dict={dict}/>
+        <Bio/>
+        <Projects/>
+        <Translation/>
+        <Links/>
       </main>
       <Line/>
     </div>
