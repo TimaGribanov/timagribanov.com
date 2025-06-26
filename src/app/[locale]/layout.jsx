@@ -1,9 +1,9 @@
 import {Noto_Serif, Shippori_Mincho} from 'next/font/google'
 import './globals.css'
-import {notFound} from "next/navigation";
-import {hasLocale, NextIntlClientProvider} from "next-intl"
+import {notFound} from 'next/navigation'
+import {hasLocale, NextIntlClientProvider} from 'next-intl'
 import {routing} from '@/i18n/routing'
-import {setRequestLocale} from "next-intl/server";
+import {setRequestLocale} from 'next-intl/server'
 
 const notoSerif = Noto_Serif({
   subsets: ['latin-ext', 'cyrillic-ext'],
@@ -16,14 +16,6 @@ const shipporiMincho = Shippori_Mincho({
   weight: ['400', '700'],
   style: ['normal']
 })
-
-export const metadata = {
-  title: 'tima gribanov',
-  description: 'Personal website for Tima Gribanov',
-  creator: 'Tima Gribanov',
-  metadataBase: 'https://timagribanov.com',
-  keywords: ['Tima Gribanov', 'web development', 'translations'],
-}
 
 export async function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}))
